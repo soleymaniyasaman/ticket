@@ -1,0 +1,8 @@
+.marker {
+  height: 5px;
+  width: 5px;
+  background-color: #7E94FF;
+  border-radius: 10px;
+  display: inline-flex;
+  margin-left: 7px;
+}

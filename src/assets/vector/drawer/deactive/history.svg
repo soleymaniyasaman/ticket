@@ -1,0 +1,13 @@
+<svg id="dashboard-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_471" data-name="Path 471" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Group_1215" data-name="Group 1215" transform="translate(2.813 2.813)">
+    <g id="Rectangle_813" data-name="Rectangle 813" transform="translate(0.188 0.188)" fill="none" stroke="#b4b1b1" stroke-width="2">
+      <rect width="18" height="18" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="16" height="16" fill="none"/>
+    </g>
+    <g id="import_export-24px" transform="translate(0 18.375) rotate(-90)">
+      <path id="Path_787" data-name="Path 787" d="M0,0H18.375V18.375H0Z" fill="none"/>
+      <path id="Path_788" data-name="Path 788" d="M2.149.1.111,2.143a.362.362,0,0,0,.256.621H1.674V7.156a.731.731,0,1,0,1.461,0V2.764H4.444A.362.362,0,0,0,4.7,2.143L2.661.1a.366.366,0,0,0-.512,0ZM7.52,8.086V3.694a.731.731,0,0,0-1.461,0V8.086H4.751a.362.362,0,0,0-.256.621l2.039,2.031a.375.375,0,0,0,.519,0L9.091,8.707a.363.363,0,0,0-.256-.621Z" transform="translate(4.59 3.762)" fill="#b4b1b1"/>
+    </g>
+  </g>
+</svg>

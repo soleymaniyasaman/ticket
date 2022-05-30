@@ -1,0 +1,142 @@
+@import '../styles/_colors.scss';
+@import '../styles/_tables.scss';
+
+#histoy__section {
+    width: 100%;
+
+    #panel {
+        position: relative;
+    }
+
+    #panel__body {
+        flex-direction: column !important;
+        // height: 37rem;
+
+    }
+
+    @include table($gray-light);
+
+    #histoy__section-filter {
+        text-align: left;
+        position: absolute;
+        top: 4.5rem;
+        left: 1vw;
+        display: flex;
+        width: 85%;
+
+        .dropdown {
+            margin-top: -3.2rem;
+            flex: 25%;
+
+            label {
+                font-size: 12px !important;
+            }
+
+            select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background: transparent;
+                background-repeat: no-repeat;
+                width: 8rem;
+            }
+
+            .dropdown-toggle {
+                background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+                // background: black url("data:image/svg+xml;utf8,<svg fill='#181C1F'  viewBox='0 -48 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>") no-repeat;
+                color: $black;
+                font-size: 13px;
+                text-decoration: none;
+                background-color: #fff;
+                border: none;
+                width: 7.2rem;
+                border-radius: 3px;
+                padding: 3px;
+
+                &:focus {
+                    box-shadow: none !important;
+                    border: none;
+                    outline: none;
+
+                }
+
+                &::after {
+                    margin-right: 1rem;
+                }
+
+                .dropdown-item {
+                    margin-top: 3rem;
+                    position: absolute;
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    .table {
+        margin-top: -1rem;
+
+        td,
+        th {
+            position: relative;
+
+            &::before {
+                content: '';
+                height: 63%;
+                width: 1px;
+                position: absolute;
+                left: 0;
+                top: 8px;
+                background-color: $gray-light;
+                opacity: 0.2;
+            }
+
+            &:last-child {
+                &::before {
+                    background-color: $black;
+                }
+            }
+        }
+
+        svg {
+            background-color: $green;
+            border-radius: 39%;
+            font-size: 11px;
+            margin-left: 7px;
+            padding: 2px;
+            color: $black;
+        }
+    }
+}
+
+.pagination {
+    justify-content: center;
+
+    .page-link {
+        background-color: $gray;
+        border: none;
+        color: $white;
+    }
+}
+
+@media screen and (max-width: 1380px) and (min-width: 576px) {
+    #histoy__section .table {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #histoy__section .table svg {
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #histoy__section #panel__body #histoy__section-filter .dropdown .dropdown-toggle {
+        font-size: 10px;
+        width: 4.2rem;
+        background: white url("data:image/svg+xml;utf8,<svg viewBox='0 -48 140 140' width='12' height='12' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='white'/></g></svg>") no-repeat;
+        color: $white;
+        background-color: $gray;
+
+    }
+}
