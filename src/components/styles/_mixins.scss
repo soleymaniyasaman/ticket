@@ -1,0 +1,50 @@
+@mixin cards($image-name, $bg-color, $padding) {
+    background-image: url("../assets/vector/#{$image-name}");
+    background-repeat: no-repeat;
+    background-color: $bg-color;
+    background-position: 50% 37%;
+    background-size: 35%;
+    position: relative;
+    padding: $padding;
+    border-radius: 8%;
+    P {
+        color: $white;
+        font-size: 14px;
+        position: absolute;
+        left: 0;
+        bottom: 11px;
+        text-align: center;
+        width: 100%;
+        direction: rtl;
+        margin-bottom: 1.5rem;
+        .badge {
+            color: $black;
+            background-color: $green;
+            border-radius: 60%;
+            height: 1rem;
+            width: 1rem;
+            line-height: 11px;
+            margin-left: 0.5rem;
+        }
+    }
+
+    div {
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $green;
+        border-radius: 7px;
+        position: absolute;
+        bottom: 14px;
+        left: 41%;
+    }
+}
+
+@mixin success-badge($color) {
+    color: $color;
+    background-color: #7E94FF;
+    border-radius: 60%;
+    margin-left: 0.5rem;
+    padding: 0px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}

@@ -1,0 +1,46 @@
+.app {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.block {
+  margin-bottom: 10px;
+}
+
+.btn {
+  background: transparent;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  color: purple;
+}
+
+header {
+  margin-bottom: 40px;
+}
+header button {
+  font-size: 100%;
+  background: none;
+  padding: 10px;
+}
+header button + button {
+  margin-left: 10px;
+}
+
+.content {
+  padding: 10px 10px 30px;
+}
+
+.icon-down {
+  fill: #d8d5d8;
+  margin-top: 3px;
+  margin-right: 6px;
+  transition: transform 280ms cubic-bezier(0, 1, 0, 1);
+}
+.icon-down.is-open {
+  transform: rotate(0.5turn);
+}
