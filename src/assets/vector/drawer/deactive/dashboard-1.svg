@@ -1,0 +1,21 @@
+<svg id="dashboard-24px_1_" data-name="dashboard-24px (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_777" data-name="Path 777" d="M0,0H24V24H0Z" fill="none"/>
+  <g id="Group_1213" data-name="Group 1213" transform="translate(3 3)">
+    <g id="Rectangle_808" data-name="Rectangle 808" fill="none" stroke="#b4b1b1" stroke-width="2">
+      <rect width="8" height="10" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="8" fill="none"/>
+    </g>
+    <g id="Rectangle_809" data-name="Rectangle 809" transform="translate(10 8)" fill="none" stroke="#b4b1b1" stroke-width="2">
+      <rect width="8" height="10" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="8" fill="none"/>
+    </g>
+    <g id="Rectangle_810" data-name="Rectangle 810" transform="translate(10)" fill="none" stroke="#b4b1b1" stroke-width="2">
+      <rect width="8" height="6" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="4" fill="none"/>
+    </g>
+    <g id="Rectangle_811" data-name="Rectangle 811" transform="translate(0 12)" fill="none" stroke="#b4b1b1" stroke-width="2">
+      <rect width="8" height="6" rx="1" stroke="none"/>
+      <rect x="1" y="1" width="6" height="4" fill="none"/>
+    </g>
+  </g>
+</svg>

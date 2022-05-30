@@ -1,0 +1,80 @@
+@import "./colors";
+
+.btn-purple {
+    background-color: $purple !important;
+    border-color: $purple;
+    color: #fff !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    height: 2.5em;
+}
+.btn-autline{
+    background-color: transparent !important ;
+    border-color: $secondary !important;
+    color: $purple !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    height: 2.5em;
+    font-size: 13px !important;
+}
+.btn-success {
+    background-color: $green !important;
+    border-color: $green;
+    color: $white !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important; 
+    height: 2.5em; 
+}
+
+.btn-danger {
+    background-color: $red !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    height: 2.5em;
+}
+
+.btn-secondary {
+    background-color: $secondary !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    height: 2.5em;
+}
+
+
+.btn-danger2 {
+    background-color: $black !important;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    border-color    : $red !important;
+    color           : $red !important;
+    font-size       : 12px !important;
+    height: 2.5em;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem #f83a3a59;
+    }
+}
+
+
+
+@mixin btnDark($color) {
+    background-color: $black !important;
+    color           : $color !important;
+    border: 1px solid $color;
+    border-radius   : 1.1875rem !important;
+    padding         : 0.2rem 1.1rem !important;
+    font-size: 11px;
+    
+}
+
+.btn-dark-success {
+    @include btnDark($green);
+}
+
+.btn-dark-danger {
+    @include btnDark($red);
+}
+
+.btn-dark-secondary {
+    @include btnDark($secondary);
+}

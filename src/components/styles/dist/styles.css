@@ -1,0 +1,88 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+.routLayout {
+  background-color: #0A1930;
+}
+
+.breadcrumb {
+  background-color: #0A1930;
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.breadcrumb .breadcrumb-item {
+  font-size: 14px;
+  text-shadow: none;
+}
+.breadcrumb .breadcrumb-item:first-child::before {
+  display: none;
+}
+.breadcrumb .breadcrumb-item::before {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-top: 0.1rem;
+  float: right;
+  color: #7E94FF;
+  content: ">";
+}
+.breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+table thead {
+  background-color: #0A1930;
+  color: #fff;
+  font-size: 13px IRANSans;
+}
+table tr {
+  background-color: #0A1930;
+  z-index: 10;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+table tr .green-shadow {
+  position: absolute;
+  z-index: -1;
+  background-color: #0A2B37;
+  width: 60%;
+  height: 100%;
+  right: 0px;
+}
+table tr .red-shadow {
+  position: absolute;
+  z-index: -1;
+  background-color: #1E1B31;
+  width: 60%;
+  height: 100%;
+  right: 0px;
+}
+
+.text-success {
+  color: #7E94FF !important;
+}
+
+.text-success-green {
+  color: #10D078 !important;
+}
+
+.text-danger {
+  color: #F83A3A !important;
+}
+
+.form-control {
+  font-size: 14px !important;
+}
+.form-control::placeholder {
+  font-size: 13px !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #BEBEBE !important;
+  opacity: 1;
+}

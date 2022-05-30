@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="133.017" height="106.152" viewBox="0 0 133.017 106.152">
+  <g id="id" transform="translate(0 0)">
+    <path id="Path_2185" data-name="Path 2185" d="M0,159.663v64.132a8.029,8.029,0,0,0,8.029,8.029h100.9a8.029,8.029,0,0,0,8.029-8.029V159.663a8.029,8.029,0,0,0-8.029-8.029H8.029A8.028,8.028,0,0,0,0,159.663Z" transform="translate(16.058 -125.672)" fill="#fec970"/>
+    <path id="Path_2186" data-name="Path 2186" d="M54.388,238.036H78.375a8.029,8.029,0,0,0,8.029-8.029V206.02a8.029,8.029,0,0,0-8.029-8.029H54.388a8.029,8.029,0,0,0-8.029,8.029v23.987A8.029,8.029,0,0,0,54.388,238.036Z" transform="translate(34.569 -159.986)" fill="#fff"/>
+    <g id="Group_1703" data-name="Group 1703" transform="translate(26.095 35.998)">
+      <path id="Path_2187" data-name="Path 2187" d="M241.524,194.278h40.681a2.007,2.007,0,0,0,0-4.014H241.524a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-239.517 -190.264)" fill="#686464"/>
+    </g>
+    <g id="Group_1704" data-name="Group 1704" transform="translate(26.095 76.043)">
+      <path id="Path_2188" data-name="Path 2188" d="M241.524,348.418h40.681a2.007,2.007,0,1,0,0-4.014H241.524a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-239.517 -344.404)" fill="#686464"/>
+    </g>
+    <g id="Group_1705" data-name="Group 1705" transform="translate(26.095 84.072)">
+      <path id="Path_2189" data-name="Path 2189" d="M40.639,379.323H133.51a2.007,2.007,0,1,0,0-4.014H40.639a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-38.632 -375.309)" fill="#686464"/>
+    </g>
+    <g id="Group_1706" data-name="Group 1706" transform="translate(26.095 92.102)">
+      <path id="Path_2190" data-name="Path 2190" d="M40.639,410.229H133.51a2.007,2.007,0,1,0,0-4.014H40.639a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-38.632 -406.215)" fill="#686464"/>
+    </g>
+    <g id="Group_1707" data-name="Group 1707" transform="translate(26.095 68.014)">
+      <path id="Path_2191" data-name="Path 2191" d="M241.524,317.512h40.681a2.007,2.007,0,0,0,0-4.014H241.524a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-239.517 -313.498)" fill="#686464"/>
+    </g>
+    <g id="Group_1708" data-name="Group 1708" transform="translate(42.153 44.027)">
+      <path id="Path_2192" data-name="Path 2192" d="M241.524,225.183h24.623a2.007,2.007,0,1,0,0-4.014H241.524a2.007,2.007,0,1,0,0,4.014Z" transform="translate(-239.517 -221.169)" fill="#686464"/>
+    </g>
+    <ellipse id="Ellipse_206" data-name="Ellipse 206" cx="9.696" cy="9.696" rx="9.696" ry="9.696" transform="translate(91.255 46.034)" fill="#496cf6"/>
+    <path id="Path_2193" data-name="Path 2193" d="M94.979,316.16H70.993a8.027,8.027,0,0,1-2.2-.308,14.338,14.338,0,0,1,28.39,0A8.034,8.034,0,0,1,94.979,316.16Z" transform="translate(17.964 -238.109)" fill="#496cf6"/>
+    <g id="Group_1711" data-name="Group 1711" transform="translate(0 0)">
+      <g id="Group_1709" data-name="Group 1709" transform="translate(0)">
+        <path id="Path_2194" data-name="Path 2194" d="M272.329,159.663v26.494a35.156,35.156,0,0,0,46.208-33.364c0-.388-.005-.773-.019-1.159h-38.16a8.028,8.028,0,0,0-8.029,8.029Z" transform="translate(-256.271 -125.672)" fill="#fba028"/>
+        <path id="Path_2195" data-name="Path 2195" d="M291.047,221.169h13.764a35.247,35.247,0,0,1-2.581,4.015H291.047a2.007,2.007,0,0,1,0-4.015Z" transform="translate(-246.887 -177.142)" fill="#404040"/>
+        <path id="Path_2196" data-name="Path 2196" d="M310.426,194.278H278.71a2.007,2.007,0,1,1,0-4.014h33.028A34.9,34.9,0,0,1,310.426,194.278Z" transform="translate(-250.608 -154.266)" fill="#404040"/>
+        <ellipse id="Ellipse_207" data-name="Ellipse 207" cx="27.119" cy="27.119" rx="27.119" ry="27.119" fill="#10d078"/>
+      </g>
+      <g id="Group_1710" data-name="Group 1710" transform="translate(13.676 19.485)">
+        <path id="Path_2197" data-name="Path 2197" d="M365.05,145.375a4.5,4.5,0,0,1-3.192-1.32l-5.4-5.4a2.007,2.007,0,1,1,2.839-2.839l5.4,5.4a.5.5,0,0,0,.706,0l13.925-13.925a2.007,2.007,0,0,1,2.839,2.839l-13.925,13.925A4.5,4.5,0,0,1,365.05,145.375Z" transform="translate(-355.867 -126.703)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

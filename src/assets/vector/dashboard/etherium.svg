@@ -1,0 +1,11 @@
+<svg id="toll-24px" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <path id="Path_2013" data-name="Path 2013" d="M0,0H30V30H0Z" fill="none"/>
+  <g id="g55" transform="translate(7.292 2.68)">
+    <path id="path43" d="M17.452,3.171V12.28l7.7,3.44Z" transform="translate(-9.746 -3.171)" fill="rgba(255,255,255,0.6)"/>
+    <path id="path45" d="M17.227,3.171,9.521,15.72l7.706-3.44Z" transform="translate(-9.521 -3.171)" fill="#fff"/>
+    <path id="path47" d="M17.452,22.032v6.189l7.71-10.658Z" transform="translate(-9.746 -3.581)" fill="rgba(255,255,255,0.6)"/>
+    <path id="path49" d="M17.227,28.221v-6.19L9.521,17.563Z" transform="translate(-9.521 -3.581)" fill="#fff"/>
+    <path id="path51" d="M17.452,20.457l7.7-4.47-7.7-3.438Z" transform="translate(-9.746 -3.438)" fill="rgba(255,255,255,0.2)"/>
+    <path id="path53" d="M9.521,15.987l7.706,4.47V12.549Z" transform="translate(-9.521 -3.438)" fill="rgba(255,255,255,0.6)"/>
+  </g>
+</svg>
