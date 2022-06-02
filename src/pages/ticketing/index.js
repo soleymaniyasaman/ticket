@@ -4,7 +4,7 @@ import { Form, Table } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom';
 
-// import { ADDTICKETING } from '../../navigation/CONSTANS';
+import { ADDTICKETING } from '../../navigation/CONSTANS';
 
 import HistoryLayout from '../../components/hisory-layout';
 
@@ -20,19 +20,9 @@ import profilePic from "../../assets/vector/profilepicture.svg";
 
 import dot from '../../assets/vector/dot.svg';
 
-// import { BASE_URL, IAM_APP } from '../../../utils/constants';
-
-// import ProfileInfo from '../../../services/profile';
-
 import PopUp from '../../components/popUp';
 
 import { timeToStr } from '../../components/utils/utils';
-
-// import IsMobile from '../../../components/is-mobile-responsive';
-
-import Down from '../../components/utils/down_collapse';
-
-// import service from '../../../services/service';
 
 import PaginationComponent from '../../components/pagination';
 
@@ -41,8 +31,6 @@ import cancel from '../../assets/vector/cancel-24px.svg'
 export default function Ticketing() {
 
     const authContext = useContext(AuthContext);
-
-    // const [filterValue, setFilterValue] = useState()
 
     const [ticketId, setTicketId] = useState();
 
@@ -118,12 +106,7 @@ export default function Ticketing() {
 
     const [onCloseTicket, setOnCloseTicket] = useState(false);
 
-
-
-    //responsive: open drawer state
-
-    const [isOpen, setIsOpen] = useState(false)
-
+    //data 
     let a = {
         items: [
             {
@@ -208,44 +191,24 @@ export default function Ticketing() {
             id: 8
         }
     }]
-    // for mobile size toggle the table
+
     // get list of tickets
-
     const ticketList = () => {
-
-        // const ticketUrl = `${BASE_URL(IAM_APP)}/ticketing/?${currentPage ? `&page=${currentPage}` : ""}&size=10`
 
         authContext.setTicketList(a.items)
 
         setDataLength(a.total)
-        // service.get_api(ticketUrl)
-
-        //     .then(resp => {
-
-
-        //     })
 
     }
 
     //close ticket
-
     const closeTicket = () => {
 
         if (ticketId) {
+
             setOnCloseTicket(true)
 
             setModalOpen(false)
-
-            // const closeTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/close/`
-
-            // service.get_api(closeTicketUrl)
-
-            //     .then(resp => {
-
-
-            //     })
-
-            //     .finally(() => setModalOpen(false))
 
         }
 
@@ -257,38 +220,17 @@ export default function Ticketing() {
 
         ticketList()
 
-    }, [currentPage, onCloseTicket]);
-
-
-
-
-
-    const filter = <>
-
-    </>;
-
+    }, [onCloseTicket]);
 
 
     // get ticket's info who click on 
 
     const ticketItems = () => {
 
-        // if (ticketId) {
         setTicketItem(b)
 
-        // const myTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/`
-
-        // service.get_api(myTicketUrl)
-
-        //     .then(resp => {
-
-
-        //     })
-
-        // }
-
     }
-    console.log("ticket", authContext.ticketList);
+
     //get replys of ticket who click on
 
     const replyItems = () => {
@@ -296,14 +238,6 @@ export default function Ticketing() {
         if (ticketId) {
 
             setTicketReplyItem(c)
-            // const myTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/reply/`
-
-            // service.get_api(myTicketUrl)
-
-            //     .then(resp => {
-
-
-            //     })
 
         }
 
@@ -316,20 +250,6 @@ export default function Ticketing() {
     const ReplyTicket = () => {
 
         setModalOpen(false)
-        // const replyTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/reply/`
-
-        // let payload = {
-
-        //     "body": text,
-
-        // }
-
-        // service.post_api(replyTicketUrl, payload = payload)
-
-        //     .then(resp => {
-
-
-        //     })
 
     }
 
@@ -357,7 +277,7 @@ export default function Ticketing() {
 
                     <div className="align-items-start d-flex">
 
-                        <img alt="" src={profilePic} className="pl-2" />
+                        <img alt="" src={profilePic} className="ps-2" />
 
                         <p className="m-0">{'نامعلوم'}</p>
 
@@ -389,15 +309,13 @@ export default function Ticketing() {
 
                     <>
 
-                        {/* {item.user.id === authContext.profileInfo.id ? */}
-
                         <div dir="rtl" className="align-items-start d-flex p-3">
 
                             <div>
 
                                 <div className="align-items-start d-flex">
 
-                                    <img alt="" src={profilePic} className="pl-2" />
+                                    <img alt="" src={profilePic} className="ps-2" />
 
                                     <p className="m-0">{'نامعلوم'}</p>
 
@@ -419,36 +337,6 @@ export default function Ticketing() {
 
                         </div>
 
-                        {/* :
-
-                            <div dir="ltr" className="align-items-start d-flex p-3">
-
-                                <div>
-
-                                    <div dir="rtl" className="align-items-start d-flex">
-
-                                        <img alt="" src={profilePic} className="pl-2" />
-
-                                        <p className="m-0">ادمین</p>
-
-                                    </div>
-
-                                    <p className="m-0 mt-n1 text-start">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
-
-                                    <div className="input-group-text rounded-3 text-white" style={{ backgroundColor: '#181C1F' }}>
-
-                                        <p className="m-1">
-
-                                            {item.body}
-
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-                            </div>} */}
-
                     </>
 
                 )
@@ -469,7 +357,7 @@ export default function Ticketing() {
 
                 <Form.Group dir="rtl" className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
 
-                    <Form.Label className="form-label ml-2" style={{ whiteSpace: 'nowrap' }}>ارسال تیکت</Form.Label>
+                    <Form.Label className="form-label ms-2" style={{ whiteSpace: 'nowrap' }}>ارسال تیکت</Form.Label>
 
                     <Form.Text as="textarea" rows={3} className="input-group-text text-right rounded-2 w-100" onChange={e => setText(e.target.value)} />
 
@@ -485,17 +373,14 @@ export default function Ticketing() {
 
     const body = <>
 
-        {/* <ProfileInfo /> */}
 
-        {/* <IsMobile /> */}
+        <div className="d-flex justify-content-end ms-0 mb-4">
 
-        <div className="d-flex justify-content-end ml-0 mb-4">
+            <Link to={ADDTICKETING}>
 
-            {/* <Link to={ADDTICKETING}> */}
+                <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ms-0">ثبت تیکت جدید<img alt="" src={add} className="ms-2 h-75 me-2" /></button>
 
-            <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ml-0">ثبت تیکت جدید<img alt="" src={add} className="ml-2 h-75 mr-2" /></button>
-
-            {/* </Link> */}
+            </Link>
 
         </div>
 
@@ -537,139 +422,7 @@ export default function Ticketing() {
 
         }
 
-        {authContext.isMobile ?
-
-            <>
-
-                <PaginationComponent total={dataLength} data={authContext.ticketList ? authContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setcurrentPage={setcurrentPage}>
-
-                    {authContext.ticketList?.length ?
-
-                        authContext.ticketList.map((item, index) => {
-
-                            return <Table responsive="sm" >
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td>عنوان تیکت </td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-
-                                            {!item.is_read ? <img alt="" src={dot} /> : null}
-
-                                            {item.title}
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>زمان ارسال</td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-
-                                            {timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr >
-
-                                        <td>وضعیت</td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-                                            {item.state === "open" ?
-
-                                                item.admin_reply === "true" ?
-
-                                                    <>
-
-                                                        <img alt="" src={check} />
-
-                                                        پاسخ داده شده
-
-                                                    </> :
-
-                                                    <>
-
-                                                        <img alt="" src={notCheck} />
-
-                                                        در انتظار پاسخ
-
-                                                    </>
-
-                                                :
-
-                                                item.state === "close" ?
-                                                    <>
-
-                                                        <img alt="" src={cancel} />
-
-                                                        بسته شده
-
-                                                    </>
-                                                    :
-                                                    null
-
-                                            }
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr class={`collapse ticket-collapse${index}`} id={`multiCollapseTicket${index}`}>
-
-                                        <td colSpan="2" >
-
-                                            <Link className="btn btn-purple w-50" onClick={() => {
-
-                                                setTicketId(item.id);
-
-                                                setModalOpen(true)
-
-                                            }}>جزئیات</Link>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr
-
-                                        data-toggle="collapse"
-
-                                        data-target={`.ticket-collapse${index}`}
-
-                                        aria-controls={`multiCollapseTicket${index}`}
-
-                                    >
-
-                                        <td colSpan={2}>
-
-                                            <button className="btn d-flex justify-content-center text-white w-100" onClick={() => setIsOpen(!isOpen)}>
-
-                                                بیشتر <Down isOpen={isOpen} />
-
-                                            </button>
-
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </Table>
-
-                        }) : null}
-
-                </PaginationComponent>
-
-            </>
-
-            :
+        {
 
             <PaginationComponent total={dataLength} data={authContext.ticketList ? authContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setcurrentPage={setcurrentPage}>
 
@@ -698,8 +451,7 @@ export default function Ticketing() {
                             authContext.ticketList.map((item, index) => {
 
                                 return (
-
-                                    <tr>
+                                    <tr key={index}>
 
                                         <td className={item.is_read ? 'text-muted' : null}>
 
@@ -722,7 +474,7 @@ export default function Ticketing() {
 
                                                     <>
 
-                                                        <img alt="" src={check} className='ml-1' />
+                                                        <img alt="" src={check} className='ms-1' />
 
                                                         پاسخ داده شده
 
@@ -730,7 +482,7 @@ export default function Ticketing() {
 
                                                     <>
 
-                                                        <img alt="" src={notCheck} className='ml-1' />
+                                                        <img alt="" src={notCheck} className='ms-1' />
 
                                                         در حال بررسی
 
@@ -741,7 +493,7 @@ export default function Ticketing() {
                                                 item.state === "close" ?
                                                     <>
 
-                                                        <img alt="" src={cancel} className='ml-1' />
+                                                        <img alt="" src={cancel} className='ms-1' />
 
                                                         بسته شده
 
@@ -761,7 +513,7 @@ export default function Ticketing() {
 
                                                 setModalOpen(true)
 
-                                            }}>جزئیات</Link>
+                                            }} to={'#'}>جزئیات</Link>
 
                                         </td>
 
@@ -800,8 +552,6 @@ export default function Ticketing() {
             title="تیکت ها"
 
             panelTitle="تیکت ها"
-
-            // filter={filter}
 
             body={body}
 

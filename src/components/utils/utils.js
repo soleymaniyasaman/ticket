@@ -1,6 +1,5 @@
 import cookie from 'react-cookies';
 import qs from 'qs';
-// import {BASE_URL, COOKIE_EXPIRES} from './constants';
 import momentJalaali from "moment-jalaali";
 
 
@@ -35,12 +34,6 @@ export function Header(options = {}) {
     return options;
 }
 
-// export function Url(url = "", data = undefined) {
-
-//     if (url.charAt(0) !== '/') { url = '/' + url }
-//     return BASE_URL + url + (data ? `?${qs.stringify(filterNonNull(data), { arrayFormat: 'comma' })}` : ``);
-// }
-
 export function UrlQuery(url = "", data = {}) {
     return url + `?${qs.stringify(filterNonNull(data), { arrayFormat: 'comma' })}`
 }
@@ -60,7 +53,6 @@ export function Querys(url) {
 
 export function setToken(token) {
     const expires = new Date();
-    // expires.setDate(expires.getDate() + COOKIE_EXPIRES);
     cookie.save('token', token.access_token, { path: '/', expires });
     cookie.save('refresh', token.refresh_token, { path: '/' })
 }

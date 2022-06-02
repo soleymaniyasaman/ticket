@@ -1,0 +1,56 @@
+@import "../styles/colors";
+
+#panel {
+    background-color: $gray;
+    color: $white;
+    direction: rtl;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 54.5rem;
+
+    #panel__header {
+        padding: 1rem 0 0 6rem;
+
+        span {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: $white;
+            text-align: center;
+
+            &:first-child {
+                font-size: 23px;
+            }
+
+            &:nth-child(2) {
+                top: -6px !important;
+                position: relative;
+                right: 6px;
+            }
+        }
+
+        svg {
+            color: $green;
+        }
+    }
+
+    #panel__body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+        overflow-y: auto;
+        border: 1px solid $gray;
+        border-radius: 10px;
+        height: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #panel {
+        max-height: unset;
+    }
+}

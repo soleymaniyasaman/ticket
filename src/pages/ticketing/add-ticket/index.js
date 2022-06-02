@@ -4,27 +4,21 @@ import { Field, Formik } from 'formik';
 
 import { Col, Row } from 'react-bootstrap';
 
-import { TICKETING } from '../../../../navigation/CONSTANS';
+import { TICKETING } from '../../../navigation/CONSTANS';
 
-import { Link, useHistory } from 'react-router-dom';
-
-import HistoryLayout from '../../history/hisory-layout';
+import { Link } from 'react-router-dom';
 
 import { FormItem, Select } from 'formik-antd';
 
-import { BASE_URL, IAM_APP } from '../../../../utils/constants';
-
-import service from '../../../../services/service';
-
 import '../style.scss';
+
+import HistoryLayout from '../../../components/hisory-layout';
 
 
 
 
 
 export default function AddTicket(props) {
-
-    let history = useHistory()
 
     //ticket category state
 
@@ -36,45 +30,13 @@ export default function AddTicket(props) {
 
     const submitTicket = (values) => {
 
-        const submitTicketQuery = `${BASE_URL(IAM_APP)}/ticketing/`
-
-        let payload = {
-
-            "title": values.title,
-
-            "body": values.body,
-
-            "category_id": values.category_id,
-
-            "priority": "high",
-
-            "media_id": 1
-
-        }
-
-        service.post_api(submitTicketQuery, payload = payload)
-
-            .then(resp => {
-
-                history.push(TICKETING)
-
-            })
-
     }
 
     //ticket category
 
     const category = () => {
 
-        const levelListUrl = `${BASE_URL(IAM_APP)}/ticketing/category/`
-
-        service.get_api(levelListUrl)
-
-            .then(resp => {
-
-                setCategoryOption(resp.data.result.items)
-
-            })
+        setCategoryOption()
 
     }
 
@@ -98,7 +60,7 @@ export default function AddTicket(props) {
 
                 <Row>
 
-                    <Col sm={6} className="pl-0">
+                    <Col sm={6} className="ps-0">
 
                         <div className="form-group row">
 
@@ -146,11 +108,11 @@ export default function AddTicket(props) {
 
                     </Col>
 
-                    <Col sm={6} className="pl-0">
+                    <Col sm={6} className="ps-0">
 
                     </Col>
 
-                    <Col sm={6} className="pl-0">
+                    <Col sm={6} className="ps-0">
 
                         <div className="form-group row">
 
@@ -166,7 +128,7 @@ export default function AddTicket(props) {
 
                     </Col>
 
-                    <Col sm={6} className="pl-0">
+                    <Col sm={6} className="ps-0">
 
                     </Col>
 
@@ -188,7 +150,7 @@ export default function AddTicket(props) {
 
                 </Row>
 
-                <Row className="justify-content-end mb-5 ml-sm-5 pl-0">
+                <Row className="justify-content-end mb-5 me-sm-5 pe-0">
 
                     <button type="button" className="btn btn-cancele d-flex justify-content-around px-5">
 
@@ -200,7 +162,7 @@ export default function AddTicket(props) {
 
                     </button>
 
-                    <button type="submit" className="btn btn-purple ml-5 w-auto"
+                    <button type="submit" className="btn btn-purple me-5 w-auto"
 
                     >
 
@@ -223,8 +185,6 @@ export default function AddTicket(props) {
             title="تیکت ها"
 
             panelTitle="ثبت تیکت جدید"
-
-            // filter={filter}
 
             body={body}
 

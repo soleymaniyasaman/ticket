@@ -481,18 +481,3 @@ const MyProvider = ({ children }) => {
 
 
 export default MyProvider;
-
-
-
-// export const AuthContext = React.createContext({
-
-//     isLoggedIn: token ? true : false,
-
-//     token: null,
-
-//     login: () => {},
-
-//     logout: () => {}
-
-// });
-

@@ -4,8 +4,6 @@ import { Popconfirm, Button } from 'antd';
 
 import { React } from 'react';
 
-// import { Button } from 'react-bootstrap';
-
 import Modal from "react-bootstrap/Modal";
 
 import { faArrowLeft, faCaretLeft } from '@fortawesome/free-solid-svg-icons'
@@ -28,9 +26,9 @@ const PopUp = (props) => {
 
           <div className="d-flex" >
 
-            <p className="text-success mr-3" role="button" onClick={props.onHide}>
+            <p className="text-success me-3" role="button" onClick={props.onHide}>
 
-              <FontAwesomeIcon icon={faArrowLeft} className="mr-1" />
+              <FontAwesomeIcon icon={faArrowLeft} className="me-1" />
 
               بازگشت به لیست تیکت‌‌ها
 
@@ -53,17 +51,11 @@ const PopUp = (props) => {
 
                 بستن تیکت
 
-                <img src={lock} className="h-50 ml-1" />
+                <img src={lock} alt='' className="h-50 ms-1" />
 
               </Button>
 
             </Popconfirm>
-
-            {/* <Button onClick={props.onClose} className="bg-transparent btn btn-danger2 popUpButtonDeny">
-
-            {props.onCloseText}
-
-          </Button> */}
 
           </div>
 
@@ -75,7 +67,6 @@ const PopUp = (props) => {
 
           <div className=" d-flex align-items-center w-auto mx-auto flex-row-reverse">
 
-            {/* <img src="/assests/drawer/Polygon.svg" /> */}
             <span>
 
               <FontAwesomeIcon className='fs-4 ms-2' style={{ color: '#7E94FF' }} icon={faCaretLeft} />

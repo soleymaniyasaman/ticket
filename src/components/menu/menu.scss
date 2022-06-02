@@ -1,0 +1,207 @@
+@import "../styles/colors";
+
+
+.is-active {
+    background: #293C55 !important;
+
+    border-left: 4px solid #7E94FF;
+
+    cursor: pointer;
+
+    color: #FFF;
+
+    text-decoration: none;
+}
+
+.layout {
+    background: $black 0% 0% no-repeat padding-box;
+    max-width: 1920px;
+    height: auto;
+    display: flex;
+    margin: auto;
+    justify-content: flex-end;
+    direction: rtl;
+}
+
+.sidebarContainer {}
+
+.wrapper {
+    margin-top: 70px;
+    padding: 0;
+    width: 85%;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    background: $gray 0% 0% no-repeat padding-box;
+    position: fixed;
+    z-index: 500;
+    overflow: auto;
+}
+
+.sidebarList {
+    height: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebarList .row {
+    width: 100%;
+    height: 65px;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.sidebarList .row:hover {
+    cursor: pointer;
+    background-color: #293C55;
+}
+
+.sidebarList #active {
+    background-color: #293C55;
+}
+
+.sidebarList .row:active {
+    cursor: pointer;
+    background-color: #293C55;
+}
+
+.sidebarList #active {
+    background-color: #293C55;
+}
+
+.row #icon {
+    flex: 2%;
+    // flex: 30%;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+
+}
+
+.row #title {
+    flex: 48%;
+    font: normal normal normal 14px/16px IRANSans;
+    // flex: 50%;
+    // font: normal normal normal 16px/27px IRANSans;
+    letter-spacing: 0px;
+    // white-space: nowrap;
+    padding: 0;
+}
+
+.row #spanDown {
+    flex: 3%;
+    // flex: 20%;
+    display: grid;
+    width: 7px;
+    height: 18px;
+}
+
+.topbar {
+    height: 70px;
+    /* width: 100%; */
+    background: $gray 0% 0% no-repeat padding-box;
+    position: fixed;
+    z-index: 100;
+}
+
+.topbarProfile {
+    height: auto;
+    padding: 0;
+    width: 10%;
+    direction: rtl;
+    list-style-type: none;
+    margin: 0;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbarProfile #imageProfile {
+    flex: 30%;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 27px;
+}
+
+.topbarProfile #nameProfile {
+    flex: 50%;
+    font: normal normal normal 16px/27px IRANSans;
+    letter-spacing: 0px;
+    margin: 0;
+
+}
+
+.topbarProfile #spanProfile {
+    flex: 20%;
+    display: grid;
+    width: 18px;
+    height: 18px;
+    transform: matrix(0, -1, -1, 0, 0, 0);
+
+}
+
+
+@media screen and (max-width: 1350px) {
+    .row #icon {
+        width: 1.6vw;
+        height: 1.6vw;
+    }
+
+    .row #title {
+        font: normal normal normal 1vw/16px IRANSans;
+        // font: normal normal normal 1vw/27px IRANSans;
+        flex: 96%;
+        margin-right: 2px;
+    }
+
+    .row #spanDown {
+        flex: 3%;
+        display: grid;
+        width: 3vw;
+        // width: 2vw;
+        height: 2vw;
+    }
+
+    .topbarProfile #imageProfile {
+        flex: 1%;
+        display: grid;
+        place-items: center;
+        width: 20px;
+        height: 27px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .row #icon {
+        flex: 34%;
+        width: 5.6vw;
+        height: 5.6vw;
+    }
+
+    .row #title {
+        font: normal normal normal 14px/16px IRANSans !important;
+        // font: normal normal normal 14px/27px IRANSans;
+        flex: 61%;
+        margin-right: 2px;
+    }
+
+    .row #spanDown {
+        flex: 5%;
+        display: grid;
+        width: 7px;
+        height: 18px;
+    }
+}

@@ -1,0 +1,134 @@
+@import '../styles/colors';
+
+#dashboard-header {
+    direction: rtl;
+    text-align: right;
+    background-color: $gray;
+    // width: 87%;
+    max-width: 1674px;
+    position: fixed;
+    z-index: 2000;
+    padding: 0;
+
+    .logo {
+        margin: 1vw 10vw 0 0 !important;
+        color: $purple !important;
+    }
+
+    .container_burger {
+        // position: relative;
+        margin-inline: auto;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        display: flex;
+
+        a {
+            font-size: 12px IRANSans;
+            color: $white;
+            display: flex;
+            align-items: center;
+
+            img {
+                margin-left: 5px;
+                color: $purple;
+                width: 1rem;
+            }
+
+            &:first-child {
+                margin-left: auto;
+            }
+
+            // &:last-child{
+            //     padding: 0;
+            // }
+            .dropdown {
+                position: relative;
+                // width: 8rem;
+                display: flex;
+                align-items: center;
+                // margin-top: 0.2rem;
+
+                .dropdown-menu {
+                    background-color: $white;
+                    text-align: start;
+
+                    a {
+                        color: $black;
+                    }
+
+                    .dropdown-item {
+                        color: $black;
+                        padding: 0.5rem;
+                        font-size: 12px;
+
+                        &:hover {
+                            background-color: #C5CAE3;
+                        }
+
+                        .dropdown-item-text {
+                            padding: 0.25rem 0.5rem;
+                        }
+                    }
+                }
+
+                #nav-dropdown {
+
+                    .dropdown-item {
+                        color: $black;
+                        padding: 0.5rem;
+
+
+                    }
+                }
+            }
+
+            .dropdown-toggle {
+                display: flex;
+                align-items: center;
+
+                &::after {
+                    margin-right: 1rem;
+                    background-image: url('../../assets/vector/drawer/deactive/chevron-black_24dp.svg');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 0rem 100%;
+                    width: 24px;
+                    height: 24px;
+                    border: none;
+                    margin-top: 2px;
+
+                }
+
+            }
+        }
+
+        .btn {
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #dashboard-header .navbar-nav a {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #dashboard-header .navbar-nav a {
+        font-size: xx-small;
+        white-space: nowrap;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (max-width: 567px) {
+    #dashboard-header .navbar-nav a img {
+        margin-left: 0;
+    }
+}

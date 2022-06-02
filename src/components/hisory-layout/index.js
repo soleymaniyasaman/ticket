@@ -1,28 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { Col, Container, Row } from 'react-bootstrap'
 
-import { useRouteMatch } from 'react-router-dom'
-
-// import Panel from '../../../../components/shared/panel'
-
-import { AuthContext } from '../../context/auth-context'
-
-// import { DASHBOARD, TICKETING } from '../../navigation/CONSTANS'
+import Panel from '../panel'
 
 import './history-layout.scss'
 
 
 
 export default function HistoryLayout(props) {
-
-    const authContext = useContext(AuthContext);
-
-    // let matchDashboardOrder = useRouteMatch(DASHBOARD);
-
-    // let matchTicket = useRouteMatch(TICKETING);
-
-
 
     return (
 
@@ -40,43 +26,39 @@ export default function HistoryLayout(props) {
 
                 <Row>
 
-                    {/* <Panel title={props.panelTitle} className={props.className} className_container={props.className_container}> */}
+                    <Panel title={props.panelTitle} className={props.className} className_container={props.className_container}>
 
-                    <div id="histoy__section-filter" className={"mr-auto d-flex row justify-content-between"}>
+                        <div id="histoy__section-filter" className={"me-auto d-flex row justify-content-between"}>
 
+                            <Col sm={12} className="d-inline-flex">
 
+                                {props.filterMarket}
 
-                        <Col sm={12} className="d-inline-flex">
+                                {props.filter}
 
-                            {props.filterMarket}
+                                {props.filterQoin}
 
-                            {props.filter}
+                                {props.filterDepositKind}
 
-                            {props.filterQoin}
+                                {props.filterOrder}
 
-                            {props.filterDepositKind}
+                                {props.filterKind}
 
-                            {props.filterOrder}
+                                {props.filterStatus}
 
-                            {props.filterKind}
+                                {props.filterScore}
 
-                            {props.filterStatus}
+                            </Col>
 
-                            {props.filterScore}
+                        </div>
 
-                        </Col>
+                        <div className="h-100" style={{ height: ' ' }}>
 
+                            {props.body}
 
+                        </div>
 
-                    </div>
-
-                    <div className="h-100" style={{ height: '' }}>
-
-                        {props.body}
-
-                    </div>
-
-                    {/* </Panel> */}
+                    </Panel>
 
                 </Row>
 
