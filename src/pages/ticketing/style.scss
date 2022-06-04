@@ -31,7 +31,7 @@
 .modal-content {
   background-color: $gray;
   color: $white;
-  font: normal normal normal 16px/27px IRANSans;
+  font: normal normal normal 16px/27px;
   letter-spacing: 0px;
   text-align: left;
 
@@ -44,8 +44,6 @@
 
 .modal-body {
   background-color: $gray;
-  font-family: 'IranSans' !important;
-
 }
 
 .modal-footer {

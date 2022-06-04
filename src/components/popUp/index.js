@@ -30,7 +30,7 @@ const PopUp = (props) => {
 
               <FontAwesomeIcon icon={faArrowLeft} className="me-1" />
 
-              بازگشت به لیست تیکت‌‌ها
+              back to Tickets
 
             </p>
 
@@ -42,14 +42,16 @@ const PopUp = (props) => {
 
               onConfirm={props.onClose}
 
-              okText="تایید"
+              okText="accept"
 
-              cancelText="لغو"
+              cancelText="cancel"
 
             >
-              <Button className="ant-btn border-0 btn btn-danger text-white popUpButtonDeny">
+              <Button className="ant-btn border-0 btn btn-danger text-white popUpButtonDeny p-0">
 
-                بستن تیکت
+                <span className="small">
+                  Close Ticket
+                </span>
 
                 <img src={lock} alt='' className="h-50 ms-1" />
 

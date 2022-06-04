@@ -35,7 +35,7 @@ export default function DashboardHeader() {
 
                         <img src={Home} alt='' className="me-1 w-auto" />
 
-                        صفحه اصلی
+                        Home
 
                     </Nav.Link>
 
@@ -45,7 +45,7 @@ export default function DashboardHeader() {
 
                             <img alt="" src={email} />
 
-                            تیکت
+                            Tickets
 
                         </Nav.Link>
 
@@ -55,7 +55,7 @@ export default function DashboardHeader() {
 
                         <img alt="" src={bell} />
 
-                        پیام ها
+                        Messages
 
                     </Nav.Link>
 

@@ -2,9 +2,10 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 
-.routLayout{
+.routLayout {
     background-color: $black;
 }
+
 // .btn-purple {
 //     background-color: $purple;
 //     color: #fff;
@@ -14,17 +15,18 @@
 // }
 .breadcrumb {
     background-color: $black;
-    margin-bottom   : 0;
-    padding-right   : 0;
-    padding-top     : 0;
+    margin-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
 
     .breadcrumb-item {
         font-size: 14px;
         text-shadow: none;
-        
-        &:first-child::before{
+
+        &:first-child::before {
             display: none;
         }
+
         &::before {
             padding-right: 0.5rem;
             padding-left: 0.5rem;
@@ -36,20 +38,20 @@
 
         a {
             text-decoration: none;
-            color          : $white;
-            font-size      : 13px;
+            color: $white;
+            font-size: 13px;
         }
     }
 }
 
 table {
     border-collapse: separate;
-    border-spacing : 0 .5rem;
+    border-spacing: 0 .5rem;
 
     thead {
         background-color: $black;
-        color           : #fff;
-        font-size       : 13px IRANSans;
+        color: #fff;
+        font-size: 13px;
     }
 
     tr {
@@ -58,7 +60,8 @@ table {
         position: relative;
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
-        .green-shadow{
+
+        .green-shadow {
             position: absolute;
             z-index: -1;
             background-color: #0A2B37;
@@ -66,7 +69,8 @@ table {
             height: 100%;
             right: 0px;
         }
-        .red-shadow{
+
+        .red-shadow {
             position: absolute;
             z-index: -1;
             background-color: #1E1B31;
@@ -80,6 +84,7 @@ table {
 .text-success {
     color: $purple !important;
 }
+
 .text-success-green {
     color: $green !important;
 }
@@ -87,15 +92,18 @@ table {
 .text-danger {
     color: $red !important;
 }
-.form-control{
-    font-size: 14px!important;
 
-    &::placeholder{
-        font-size: 13px!important;
+.form-control {
+    font-size: 14px !important;
+
+    &::placeholder {
+        font-size: 13px !important;
 
     }
 }
-.form-control:disabled, .form-control[readonly] {
-    background-color: $gray-light!important;
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: $gray-light !important;
     opacity: 1;
 }

@@ -64,7 +64,7 @@ export default function AddTicket(props) {
 
                         <div className="form-group row">
 
-                            <label className="col-sm-2 col-form-label">موضوع</label>
+                            <label className="col-sm-2 col-form-label">Topic</label>
 
                             <div className="col-sm-10">
 
@@ -82,7 +82,7 @@ export default function AddTicket(props) {
 
                                         allowClear
 
-                                        placeholder="موضوع تیکت را انتخاب کنید"
+                                        placeholder="Select ticket's topic"
 
                                     >
 
@@ -116,11 +116,11 @@ export default function AddTicket(props) {
 
                         <div className="form-group row">
 
-                            <label className="col-sm-2 col-form-label">عنوان</label>
+                            <label className="col-sm-2 col-form-label">title</label>
 
                             <div className="col-sm-10">
 
-                                <Field name="title" className="form-control h-75 mb-3" placeholder="عنوان تیکت را وارد کنید" />
+                                <Field name="title" className="form-control h-75 mb-3" placeholder="Enter ticket's title" />
 
                             </div>
 
@@ -136,11 +136,11 @@ export default function AddTicket(props) {
 
                         <div className="form-group row">
 
-                            <label className="col-sm-1 col-form-label">متن تیکت </label>
+                            <label className="col-sm-1 col-form-label">Ticket's text</label>
 
                             <div className="col-sm-10">
 
-                                <Field as="textarea" name="text" rows="7" className="form-control h-75 mb-3 p-3" placeholder="متن تیکت را وارد کنید" />
+                                <Field as="textarea" name="text" rows="7" className="form-control h-75 mb-3 p-3" placeholder="Enter ticket's text" />
 
                             </div>
 
@@ -156,7 +156,7 @@ export default function AddTicket(props) {
 
                         <Link to={TICKETING} className="text-danger text-decoration-none">
 
-                            انصراف
+                            Cancel
 
                         </Link>
 
@@ -166,7 +166,7 @@ export default function AddTicket(props) {
 
                     >
 
-                        ارسال تیکت
+                        Send Ticket
 
                     </button>
 
@@ -182,9 +182,9 @@ export default function AddTicket(props) {
 
         <HistoryLayout
 
-            title="تیکت ها"
+            title="Tickets"
 
-            panelTitle="ثبت تیکت جدید"
+            panelTitle="Add Ticket"
 
             body={body}
 

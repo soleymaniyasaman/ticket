@@ -63,7 +63,7 @@ export default function Ticketing() {
         updated_at: null,
         user: {
             Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
+            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
             id: 6
         }
     }, {
@@ -80,7 +80,7 @@ export default function Ticketing() {
         updated_at: null,
         user: {
             Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
+            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
             id: 6
         }
     }, {
@@ -97,7 +97,7 @@ export default function Ticketing() {
         updated_at: "2021-12-07T10:23:42.440291+03:30",
         user: {
             Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'اشکان', last_name: null },
+            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'Ashkan', last_name: 'Haghju' },
             id: 8
         }
     }])
@@ -115,15 +115,15 @@ export default function Ticketing() {
                 category: { created_at: null, updated_at: null, title: "test", id: 1 },
                 created_at: "2021-12-08T15:50:13.150098+03:30",
                 id: 56,
-                is_read: true,
+                is_read: false,
                 media_id: 1,
                 priority: "high",
                 state: "open",
-                title: "ttteeeeesssstttt",
+                title: "test",
                 updated_at: null,
                 user: {
                     Group: null,
-                    credentials: { created_at: null, updated_at: null, first_name: "یاسمن", last_name: "سلیمانی" },
+                    credentials: { created_at: null, updated_at: null, first_name: "Yasaman", last_name: "Soleymani" },
                     id: 6
                 }
             }
@@ -153,7 +153,7 @@ export default function Ticketing() {
         updated_at: null,
         user: {
             Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
+            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
             id: 6
         }
     }, {
@@ -170,7 +170,7 @@ export default function Ticketing() {
         updated_at: null,
         user: {
             Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
+            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
             id: 6
         }
     }, {
@@ -187,7 +187,7 @@ export default function Ticketing() {
         updated_at: "2021-12-07T10:23:42.440291+03:30",
         user: {
             Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'اشکان', last_name: null },
+            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'Ashkan', last_name: 'Haghju' },
             id: 8
         }
     }]
@@ -279,7 +279,7 @@ export default function Ticketing() {
 
                         <img alt="" src={profilePic} className="ps-2" />
 
-                        <p className="m-0">{'نامعلوم'}</p>
+                        <p className="m-0">{'none register'}</p>
 
                     </div>
 
@@ -317,7 +317,7 @@ export default function Ticketing() {
 
                                     <img alt="" src={profilePic} className="ps-2" />
 
-                                    <p className="m-0">{'نامعلوم'}</p>
+                                    <p className="m-0">{'none register'}</p>
 
                                 </div>
 
@@ -357,7 +357,7 @@ export default function Ticketing() {
 
                 <Form.Group dir="rtl" className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
 
-                    <Form.Label className="form-label ms-2" style={{ whiteSpace: 'nowrap' }}>ارسال تیکت</Form.Label>
+                    <Form.Label className="form-label ms-2" style={{ whiteSpace: 'nowrap' }}>Send Ticket</Form.Label>
 
                     <Form.Text as="textarea" rows={3} className="input-group-text text-right rounded-2 w-100" onChange={e => setText(e.target.value)} />
 
@@ -378,7 +378,7 @@ export default function Ticketing() {
 
             <Link to={ADDTICKETING}>
 
-                <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ms-0">ثبت تیکت جدید<img alt="" src={add} className="ms-2 h-75 me-2" /></button>
+                <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ms-0">Add Ticket<img alt="" src={add} className="ms-2 h-75 me-2" /></button>
 
             </Link>
 
@@ -394,7 +394,7 @@ export default function Ticketing() {
 
                 size="lg"
 
-                popUpHead={"مشاهده پیام"}
+                popUpHead={"See Message"}
 
                 popUpBody={popUpBody}
 
@@ -402,7 +402,7 @@ export default function Ticketing() {
 
                 onClose={closeTicket}
 
-                onCloseText={'آیا از بستن تیکت مطمئن هستید؟ بعد از بسته شدن تیکت امکان پاسخ مجدد وجود ندارد'}
+                onCloseText={'Are you sure you want to close the ticket? It is not possible to answer again after closing the ticket'}
 
                 onAccept={() => {
 
@@ -416,7 +416,7 @@ export default function Ticketing() {
 
                 }
 
-                onAcceptText={'ارسال تیکت'}
+                onAcceptText={'Send Ticket'}
 
             /> : null
 
@@ -432,13 +432,13 @@ export default function Ticketing() {
 
                         <tr>
 
-                            <th>عنوان تیکت </th>
+                            <th>Ticket Title</th>
 
-                            <th>زمان ارسال  </th>
+                            <th>Send Time </th>
 
-                            <th>وضعیت</th>
+                            <th>Situation</th>
 
-                            <th>جزییات</th>
+                            <th>Detail</th>
 
                         </tr>
 
@@ -476,7 +476,7 @@ export default function Ticketing() {
 
                                                         <img alt="" src={check} className='ms-1' />
 
-                                                        پاسخ داده شده
+                                                        Answered
 
                                                     </> :
 
@@ -484,7 +484,7 @@ export default function Ticketing() {
 
                                                         <img alt="" src={notCheck} className='ms-1' />
 
-                                                        در حال بررسی
+                                                        Pending
 
                                                     </>
 
@@ -495,7 +495,7 @@ export default function Ticketing() {
 
                                                         <img alt="" src={cancel} className='ms-1' />
 
-                                                        بسته شده
+                                                        Closed
 
                                                     </>
                                                     :
@@ -513,7 +513,7 @@ export default function Ticketing() {
 
                                                 setModalOpen(true)
 
-                                            }} to={'#'}>جزئیات</Link>
+                                            }} to={'#'}>Detail</Link>
 
                                         </td>
 
@@ -525,7 +525,7 @@ export default function Ticketing() {
 
                                 <td colSpan={4}>
 
-                                    تیکتی ثبت نشده است
+                                    There is not any Ticket
 
                                 </td>
 
@@ -549,9 +549,9 @@ export default function Ticketing() {
 
         <HistoryLayout
 
-            title="تیکت ها"
+            title="Tickets"
 
-            panelTitle="تیکت ها"
+            panelTitle="Tickets"
 
             body={body}
 

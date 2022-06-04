@@ -41,7 +41,7 @@ const SidebarData = [
 
     elementNo: 0,
 
-    title: "داشبورد",
+    title: "Dashboard",
 
     icon: dashboardIcon,
 
@@ -63,7 +63,7 @@ const SidebarData = [
 
     elementNo: 1,
 
-    title: "کیف پول",
+    title: "Wallet",
 
     icon: wallet,
 
@@ -86,7 +86,7 @@ const SidebarData = [
 
     elementNo: 2,
 
-    title: "سفارش های من",
+    title: "My Orders",
 
     icon: listAltIcon,
 
@@ -195,7 +195,7 @@ const DashboardMenu = ({ open, setOpen }) => {
 
     elementNo: 3,
 
-    title: 'بازارها',
+    title: 'Markets',
 
     icon: marketIcon,
 
@@ -229,7 +229,7 @@ const DashboardMenu = ({ open, setOpen }) => {
 
             {SidebarData.map((item, index) => {
 
-              if (item.title === 'بازارها') {
+              if (item.title === 'Markets') {
 
                 return <SubMenu item={list} key={index} open={open} setOpen={setOpen} className="sidebarList" />;
 

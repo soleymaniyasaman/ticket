@@ -104,7 +104,7 @@ text-decoration: none;
 
 color: #FFF;
 
-font-size: 18px IRANSans;
+font-size: 18px;
 
 &:hover {
 
