@@ -158,22 +158,44 @@ export default function Ticketing() {
     //post reply text
 
     const ReplyTicket = (text) => {
-        setTicketReplyItem((prev) => [...prev, {
-            admin_reply: true,
-            body: text,
-            category: null,
-            created_at: "2021-12-07T10:23:18.400000+03:30",
-            id: 48,
-            is_read: true,
-            media_id: 0,
-            priority: "low",
-            state: "open",
-            title: null,
-            updated_at: new Date().toISOString(),
-            user: {
-                author: 'user'
+        setTicketReplyItem((prev) => {
+            if (prev) {
+                return [...prev, {
+                    admin_reply: true,
+                    body: text,
+                    category: null,
+                    created_at: "2021-12-07T10:23:18.400000+03:30",
+                    id: 48,
+                    is_read: true,
+                    media_id: 0,
+                    priority: "low",
+                    state: "open",
+                    title: null,
+                    updated_at: new Date().toISOString(),
+                    user: {
+                        author: 'user'
+                    }
+                }]
+
+            } else {
+                return [{
+                    admin_reply: true,
+                    body: text,
+                    category: null,
+                    created_at: "2021-12-07T10:23:18.400000+03:30",
+                    id: 48,
+                    is_read: true,
+                    media_id: 0,
+                    priority: "low",
+                    state: "open",
+                    title: null,
+                    updated_at: new Date().toISOString(),
+                    user: {
+                        author: 'user'
+                    }
+                }]
             }
-        }])
+        })
         setText()
 
     }
