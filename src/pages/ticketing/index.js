@@ -46,7 +46,6 @@ export default function Ticketing() {
 
     const [text, setText] = useState();
 
-    const [onCloseTicket, setOnCloseTicket] = useState(false);
 
     //data 
 
@@ -105,16 +104,8 @@ export default function Ticketing() {
 
     //close ticket
     const closeTicket = () => {
-
-        if (ticketId) {
-
-            setOnCloseTicket(true)
-
-            setModalOpen(false)
-
-        }
-
-    }
+        setModalOpen(false);
+    };
 
 
 
@@ -122,7 +113,7 @@ export default function Ticketing() {
 
         ticketList()
 
-    }, [onCloseTicket]);
+    }, []);
 
 
     // get ticket's info which is clicked on 
@@ -378,6 +369,11 @@ export default function Ticketing() {
                 }
 
                 onAcceptText={'Send Ticket'}
+                onConfirmClose={() => {
+                    // Remove the closed ticket from the ticket list
+                    const updatedTicketList = mainContext.ticketList.filter((ticket) => ticket.id !== ticketId);
+                    mainContext.setTicketList(updatedTicketList);
+                }}
 
             /> : null
 
@@ -472,6 +468,7 @@ export default function Ticketing() {
                                                 className="btn btn-purple w-50"
                                                 onClick={() => {
                                                     item.id && setTicketId(item.id);
+                                                    console.log("id", ticketId);
                                                     setModalOpen(true)
                                                 }}
                                                 to={'#'}>
