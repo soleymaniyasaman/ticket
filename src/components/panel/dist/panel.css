@@ -1,8 +1,8 @@
 #panel {
   background-color: #172B46;
   color: #fff;
-  direction: rtl;
-  text-align: right;
+  /* direction: rtl; */
+  /* text-align: right; */
   display: flex;
   flex-direction: column;
   width: 100%;

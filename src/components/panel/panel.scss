@@ -1,18 +1,21 @@
 @import "../styles/colors";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 #panel {
     background-color: $gray;
     color: $white;
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
     display: flex;
     flex-direction: column;
     width: 100%;
     border-radius: 10px;
     max-height: 54.5rem;
+    font-family: 'Oswald',
+        sans-serif;
 
     #panel__header {
-        padding: 1rem 0 0 6rem;
+        padding: 1rem 0 0 1rem;
+        text-align: left;
 
         span {
             margin-bottom: 0;
@@ -27,7 +30,7 @@
             &:nth-child(2) {
                 top: -6px !important;
                 position: relative;
-                right: 6px;
+                left: 6px;
             }
         }
 

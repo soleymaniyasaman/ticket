@@ -12,8 +12,8 @@
   height: auto;
   display: flex;
   margin: auto;
-  justify-content: flex-end;
-  direction: rtl;
+  justify-content: flex-start;
+  /* direction: rtl; */
 }
 
 .wrapper {
@@ -101,7 +101,7 @@
   height: auto;
   padding: 0;
   width: 10%;
-  direction: rtl;
+  /* direction: rtl; */
   list-style-type: none;
   margin: 0;
   margin-left: 25px;

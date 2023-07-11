@@ -2,6 +2,12 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 import DashboardHeader from '../components/header'
 import DashboardMenu from '../components/menu'
+import '../components/styles/_buttons.scss';
+import '../components/styles/_colors.scss';
+import '../components/styles/_collapse.scss';
+import '../components/styles/_utils.scss';
+import '../components/styles/_mixins.scss';
+import '../components/styles/styles.scss';
 
 export default function DashboardLayout(props) {
 
@@ -26,8 +32,7 @@ export default function DashboardLayout(props) {
         },
         children: {
             padding: '2rem 0px 0',
-            textAlign: 'right',
-            direction: 'rtl',
+            textAlign: 'left',
             height: "100%",
             paddingBottom: '0px',
             marginInline: 'auto'
@@ -37,6 +42,9 @@ export default function DashboardLayout(props) {
     return (
         <div style={styles.container}>
             <Row className="w-100 p-0 m-0">
+                <div style={styles.menu}>
+                    <DashboardMenu />
+                </div>
                 <div style={styles.header}>
                     <Row className="w-100 p-0 m-0">
                         <DashboardHeader />
@@ -44,9 +52,6 @@ export default function DashboardLayout(props) {
                     <Row style={styles.children}>
                         {props.children}
                     </Row>
-                </div>
-                <div style={styles.menu}>
-                    <DashboardMenu />
                 </div>
             </Row>
         </div>

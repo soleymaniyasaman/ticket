@@ -1,10 +1,7 @@
 @import '../styles/colors';
 
 #dashboard-header {
-    direction: rtl;
-    text-align: right;
     background-color: $gray;
-    // width: 87%;
     max-width: 1674px;
     position: fixed;
     z-index: 2000;
@@ -16,13 +13,18 @@
     }
 
     .container_burger {
-        // position: relative;
         margin-inline: auto;
+    }
+
+    .navbar-expand {
+        height: 70px;
+        padding-inline: 1.5rem;
     }
 
     .navbar-nav {
         width: 100%;
         display: flex;
+        justify-content: flex-end;
 
         a {
             font-size: 12px;
@@ -40,15 +42,10 @@
                 margin-left: auto;
             }
 
-            // &:last-child{
-            //     padding: 0;
-            // }
             .dropdown {
                 position: relative;
-                // width: 8rem;
                 display: flex;
                 align-items: center;
-                // margin-top: 0.2rem;
 
                 .dropdown-menu {
                     background-color: $white;

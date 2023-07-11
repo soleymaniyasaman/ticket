@@ -1,10 +1,7 @@
 import React from 'react'
 
 import { Routes, Route } from 'react-router-dom'
-import {
-    ADDTICKETING,
-    TICKETING,
-} from './CONSTANS'
+import { ADDTICKETTING, TICKETING } from './CONSTANTS'
 
 //pages
 import Ticketing from '../pages/ticketing'
@@ -17,21 +14,13 @@ const RouterConfig = () => {
     return (
 
         <div className="routLayout">
-
             <DashboardLayout>
-
                 <Routes>
-
                     <Route path={TICKETING} element={<Ticketing />} />
-
-                    <Route path={ADDTICKETING} element={<AddTicket />} />
-
+                    <Route path={ADDTICKETTING} element={<AddTicket />} />
                 </Routes>
-
             </DashboardLayout>
-
         </div>
-
     )
 
 }

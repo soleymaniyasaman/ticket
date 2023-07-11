@@ -10,7 +10,7 @@ import "./pagination.scss";
 
 function PaginationComponent(props) {
 
-  const [pageNumberLimit, setpageNumberLimit] = useState(3);
+  const [pageNumberLimit, setPageNumberLimit] = useState(3);
 
   const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(3);
 
@@ -26,7 +26,7 @@ function PaginationComponent(props) {
 
   const handleClick = (event) => {
 
-    props.setcurrentPage(Number(event.target.id));
+    props.setCurrentPage(Number(event.target.id));
 
   };
 
@@ -68,7 +68,7 @@ function PaginationComponent(props) {
 
   const handleNextbtn = () => {
 
-    props.setcurrentPage(props.currentPage + 1);
+    props.setCurrentPage(props.currentPage + 1);
 
 
 
@@ -86,7 +86,7 @@ function PaginationComponent(props) {
 
   const handlePrevbtn = () => {
 
-    props.setcurrentPage(props.currentPage - 1);
+    props.setCurrentPage(props.currentPage - 1);
 
 
 

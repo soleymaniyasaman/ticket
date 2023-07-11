@@ -26,7 +26,7 @@ const PopUp = (props) => {
 
           <div className="d-flex" >
 
-            <p className="text-success me-3" role="button" onClick={props.onHide}>
+            <p className="text-success me-3 text-nowrap" role="button" onClick={props.onHide}>
 
               <FontAwesomeIcon icon={faArrowLeft} className="me-1" />
 
@@ -47,7 +47,7 @@ const PopUp = (props) => {
               cancelText="cancel"
 
             >
-              <Button className="ant-btn border-0 btn btn-danger text-white popUpButtonDeny p-0">
+              <Button className="ant-btn border-0 btn btn-danger text-white popUpButtonDeny p-0 w-50">
 
                 <span className="small">
                   Close Ticket

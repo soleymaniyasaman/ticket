@@ -3,13 +3,9 @@
 
 .is-active {
     background: #293C55 !important;
-
     border-left: 4px solid #7E94FF;
-
     cursor: pointer;
-
     color: #FFF;
-
     text-decoration: none;
 }
 
@@ -19,11 +15,9 @@
     height: auto;
     display: flex;
     margin: auto;
-    justify-content: flex-end;
-    direction: rtl;
+    justify-content: flex-start;
 }
 
-.sidebarContainer {}
 
 .wrapper {
     margin-top: 70px;
@@ -79,7 +73,6 @@
 
 .row #icon {
     flex: 2%;
-    // flex: 30%;
     display: grid;
     place-items: center;
     width: 22px;
@@ -90,16 +83,12 @@
 .row #title {
     flex: 48%;
     font: normal normal normal 14px/16px;
-    // flex: 50%;
-    // font: normal normal normal 16px/27px IRANSans;
     letter-spacing: 0px;
-    // white-space: nowrap;
     padding: 0;
 }
 
 .row #spanDown {
     flex: 3%;
-    // flex: 20%;
     display: grid;
     width: 7px;
     height: 18px;
@@ -107,7 +96,6 @@
 
 .topbar {
     height: 70px;
-    /* width: 100%; */
     background: $gray 0% 0% no-repeat padding-box;
     position: fixed;
     z-index: 100;
@@ -117,7 +105,6 @@
     height: auto;
     padding: 0;
     width: 10%;
-    direction: rtl;
     list-style-type: none;
     margin: 0;
     margin-left: 25px;
@@ -162,7 +149,6 @@
 
     .row #title {
         font: normal normal normal 1vw/16px;
-        // font: normal normal normal 1vw/27px IRANSans;
         flex: 96%;
         margin-right: 2px;
     }
@@ -171,7 +157,6 @@
         flex: 3%;
         display: grid;
         width: 3vw;
-        // width: 2vw;
         height: 2vw;
     }
 
@@ -193,7 +178,6 @@
 
     .row #title {
         font: normal normal normal 14px/16px !important;
-        // font: normal normal normal 14px/27px IRANSans;
         flex: 61%;
         margin-right: 2px;
     }

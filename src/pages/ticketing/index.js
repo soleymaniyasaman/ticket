@@ -4,11 +4,11 @@ import { Form, Table } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom';
 
-import { ADDTICKETING } from '../../navigation/CONSTANS';
+import { ADDTICKETTING } from '../../navigation/CONSTANTS';
 
 import HistoryLayout from '../../components/hisory-layout';
 
-import { AuthContext } from '../../context/auth-context';
+import { MainContext } from '../../context/main-context';
 
 import add from '../../assets/vector/auth/Group1841.svg';
 
@@ -30,114 +30,25 @@ import cancel from '../../assets/vector/cancel-24px.svg'
 
 export default function Ticketing() {
 
-    const authContext = useContext(AuthContext);
+    const mainContext = useContext(MainContext);
 
     const [ticketId, setTicketId] = useState();
 
-    const [currentPage, setcurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
 
     const [dataLength, setDataLength] = useState();
 
     const [modalOpen, setModalOpen] = useState(false);
 
-    const [ticketItem, setTicketItem] = useState({
-        body: "hi",
-        created_at: "2021-12-08T15:50:13.150098+03:30",
-        id: 56,
-        is_read: true,
-        media_id: 1,
-        updated_at: null
-    })
+    const [ticketItem, setTicketItem] = useState()
 
-    const [ticketReplyItem, setTicketReplyItem] = useState([{
-        admin_reply: true,
-        body: "yep",
-        category: null,
-        created_at: "2021-12-07T08:37:57.167751+03:30",
-        id: 46,
-        is_read: true,
-        media_id: null,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: null,
-        user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
-            id: 6
-        }
-    }, {
-        admin_reply: true,
-        body: "nope",
-        category: null,
-        created_at: "2021-12-07T09:06:04.149402+03:30",
-        id: 47,
-        is_read: true,
-        media_id: 1,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: null,
-        user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
-            id: 6
-        }
-    }, {
-        admin_reply: true,
-        body: "string",
-        category: null,
-        created_at: "2021-12-07T10:23:18.400000+03:30",
-        id: 48,
-        is_read: true,
-        media_id: 0,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: "2021-12-07T10:23:42.440291+03:30",
-        user: {
-            Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'Ashkan', last_name: 'Haghju' },
-            id: 8
-        }
-    }])
+    const [ticketReplyItem, setTicketReplyItem] = useState([])
 
     const [text, setText] = useState();
 
     const [onCloseTicket, setOnCloseTicket] = useState(false);
 
     //data 
-    let a = {
-        items: [
-            {
-                admin_reply: false,
-                body: "hi",
-                category: { created_at: null, updated_at: null, title: "test", id: 1 },
-                created_at: "2021-12-08T15:50:13.150098+03:30",
-                id: 56,
-                is_read: false,
-                media_id: 1,
-                priority: "high",
-                state: "open",
-                title: "test",
-                updated_at: null,
-                user: {
-                    Group: null,
-                    credentials: { created_at: null, updated_at: null, first_name: "Yasaman", last_name: "Soleymani" },
-                    id: 6
-                }
-            }
-        ],
-        total: 1
-    }
-    let b = {
-        body: "hi",
-        created_at: "2021-12-08T15:50:13.150098+03:30",
-        id: 56,
-        is_read: true,
-        media_id: 1,
-        updated_at: null
-    }
 
     let c = [{
         admin_reply: true,
@@ -152,9 +63,7 @@ export default function Ticketing() {
         title: null,
         updated_at: null,
         user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
-            id: 6
+            author: 'admin'
         }
     }, {
         admin_reply: true,
@@ -169,9 +78,8 @@ export default function Ticketing() {
         title: null,
         updated_at: null,
         user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'Yasaman', last_name: 'Soleymani' },
-            id: 6
+            author: 'admin'
+
         }
     }, {
         admin_reply: true,
@@ -186,19 +94,13 @@ export default function Ticketing() {
         title: null,
         updated_at: "2021-12-07T10:23:42.440291+03:30",
         user: {
-            Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'Ashkan', last_name: 'Haghju' },
-            id: 8
+            author: 'admin'
         }
     }]
 
     // get list of tickets
     const ticketList = () => {
-
-        authContext.setTicketList(a.items)
-
-        setDataLength(a.total)
-
+        setDataLength(mainContext.ticketList.length);
     }
 
     //close ticket
@@ -223,41 +125,71 @@ export default function Ticketing() {
     }, [onCloseTicket]);
 
 
-    // get ticket's info who click on 
+    // get ticket's info which is clicked on 
 
     const ticketItems = () => {
 
-        setTicketItem(b)
+        // Find the selected ticket by its ID
+        const selectedTicket = mainContext.ticketList.find((ticket) => ticket.id === ticketId);
 
-    }
+        // If the selected ticket exists and its is_read property is false
+        if (selectedTicket && !selectedTicket.is_read) {
+            // Update the is_read property to true
+            const updatedTicket = { ...selectedTicket, is_read: true };
 
-    //get replys of ticket who click on
+            // Find the index of the selected ticket in the ticketList array
+            const selectedIndex = mainContext.ticketList.findIndex((ticket) => ticket.id === ticketId);
 
-    const replyItems = () => {
+            // Create a new array with the updated ticket at the selected index
+            const updatedTicketList = [
+                ...mainContext.ticketList.slice(0, selectedIndex),
+                updatedTicket,
+                ...mainContext.ticketList.slice(selectedIndex + 1),
+            ];
 
-        if (ticketId) {
+            // Update the ticketList state with the updated array
+            mainContext.setTicketList(updatedTicketList);
+        }
+        setTicketItem(selectedTicket)
+
+        if (selectedTicket?.admin_reply) {
 
             setTicketReplyItem(c)
 
-        }
+        } else if (!selectedTicket?.admin_reply) {
+            setTicketReplyItem()
 
+        }
     }
 
 
 
     //post reply text
 
-    const ReplyTicket = () => {
-
-        setModalOpen(false)
+    const ReplyTicket = (text) => {
+        setTicketReplyItem((prev) => [...prev, {
+            admin_reply: true,
+            body: text,
+            category: null,
+            created_at: "2021-12-07T10:23:18.400000+03:30",
+            id: 48,
+            is_read: true,
+            media_id: 0,
+            priority: "low",
+            state: "open",
+            title: null,
+            updated_at: new Date().toISOString(),
+            user: {
+                author: 'user'
+            }
+        }])
+        setText()
 
     }
 
     useEffect(() => {
 
         ticketItems()
-
-        replyItems()
 
     }, [ticketId, modalOpen]);
 
@@ -271,7 +203,7 @@ export default function Ticketing() {
 
         {ticketItem ?
 
-            <div dir="rtl" className="align-items-start d-flex p-3">
+            <div dir="rtl" className="align-items-end d-flex p-3">
 
                 <div>
 
@@ -308,34 +240,63 @@ export default function Ticketing() {
                 return (
 
                     <>
+                        {item.user.author === 'admin' ?
+                            <div key={index} className="align-items-end d-flex p-3">
 
-                        <div dir="rtl" className="align-items-start d-flex p-3">
+                                <div>
 
-                            <div>
+                                    <div className="align-items-start d-flex">
 
-                                <div className="align-items-start d-flex">
+                                        <img alt="" src={profilePic} className="ps-2" />
 
-                                    <img alt="" src={profilePic} className="ps-2" />
+                                        <p className="m-0">Admin</p>
 
-                                    <p className="m-0">{'none register'}</p>
+                                    </div>
 
-                                </div>
+                                    <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
 
-                                <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
+                                    <div className="input-group-text rounded-3">
 
-                                <div className="input-group-text rounded-3">
+                                        <p className="m-1">
 
-                                    <p className="m-1">
+                                            {item.body}
 
-                                        {item.body}
+                                        </p>
 
-                                    </p>
+                                    </div>
 
                                 </div>
 
                             </div>
+                            :
+                            <div dir="rtl" className="align-items-start d-flex p-3">
 
-                        </div>
+                                <div>
+
+                                    <div className="align-items-start d-flex">
+
+                                        <img alt="" src={profilePic} className="pl-2" />
+
+                                        <p className="m-0">None register</p>
+
+                                    </div>
+
+                                    <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
+
+                                    <div className="input-group-text rounded-3">
+
+                                        <p className="m-1">
+
+                                            {item.body}
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
 
                     </>
 
@@ -355,11 +316,11 @@ export default function Ticketing() {
 
             <Form className="w-100">
 
-                <Form.Group dir="rtl" className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
 
-                    <Form.Label className="form-label ms-2" style={{ whiteSpace: 'nowrap' }}>Send Ticket</Form.Label>
+                    <Form.Label className="form-label me-2" style={{ whiteSpace: 'nowrap' }}>Send Message</Form.Label>
 
-                    <Form.Text as="textarea" rows={3} className="input-group-text text-right rounded-2 w-100" onChange={e => setText(e.target.value)} />
+                    <Form.Text as="textarea" rows={3} value={text} className=" text-right rounded-2 w-100" onChange={(e) => setText(e.target.value)} />
 
                 </Form.Group>
 
@@ -376,7 +337,7 @@ export default function Ticketing() {
 
         <div className="d-flex justify-content-end ms-0 mb-4">
 
-            <Link to={ADDTICKETING}>
+            <Link to={ADDTICKETTING}>
 
                 <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ms-0">Add Ticket<img alt="" src={add} className="ms-2 h-75 me-2" /></button>
 
@@ -424,7 +385,7 @@ export default function Ticketing() {
 
         {
 
-            <PaginationComponent total={dataLength} data={authContext.ticketList ? authContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setcurrentPage={setcurrentPage}>
+            <PaginationComponent total={dataLength} data={mainContext.ticketList ? mainContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setCurrentPage={setCurrentPage}>
 
                 <Table responsive="sm" className="tableTicket" >
 
@@ -436,7 +397,7 @@ export default function Ticketing() {
 
                             <th>Send Time </th>
 
-                            <th>Situation</th>
+                            <th>Status</th>
 
                             <th>Detail</th>
 
@@ -446,14 +407,14 @@ export default function Ticketing() {
 
                     <tbody>
 
-                        {authContext.ticketList?.length ?
+                        {mainContext.ticketList?.length ?
 
-                            authContext.ticketList.map((item, index) => {
+                            mainContext.ticketList.map((item, index) => {
 
                                 return (
                                     <tr key={index}>
 
-                                        <td className={item.is_read ? 'text-muted' : null}>
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
 
                                             {!item.is_read ? <img alt="" src={dot} /> : null}
 
@@ -461,14 +422,14 @@ export default function Ticketing() {
 
                                         </td>
 
-                                        <td className={item.is_read ? 'text-muted' : null}>
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
 
-                                            {timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}
+                                            {item.created_at ? timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD") : ""}
 
                                         </td>
 
-                                        <td className={item.is_read ? 'text-muted' : null}>
-                                            {item.state === "open" ?
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
+                                            {item.state && item.state === "open" ?
 
                                                 item.admin_reply === true ?
 
@@ -490,7 +451,7 @@ export default function Ticketing() {
 
                                                 :
 
-                                                item.state === "close" ?
+                                                item.state && item.state === "close" ?
                                                     <>
 
                                                         <img alt="" src={cancel} className='ms-1' />
@@ -507,13 +468,15 @@ export default function Ticketing() {
 
                                         <td>
 
-                                            <Link className="btn btn-purple w-50" onClick={() => {
-
-                                                setTicketId(item.id);
-
-                                                setModalOpen(true)
-
-                                            }} to={'#'}>Detail</Link>
+                                            <Link
+                                                className="btn btn-purple w-50"
+                                                onClick={() => {
+                                                    item.id && setTicketId(item.id);
+                                                    setModalOpen(true)
+                                                }}
+                                                to={'#'}>
+                                                Detail
+                                            </Link>
 
                                         </td>
 

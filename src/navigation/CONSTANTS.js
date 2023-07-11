@@ -1,3 +1,3 @@
 export const TICKETING = '/ticket'
 
-export const ADDTICKETING = '/add'
+export const ADDTICKETTING = '/add'

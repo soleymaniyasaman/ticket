@@ -1,12 +1,7 @@
 import React, { createContext, useState } from 'react';
 
-// import useToken from '../useToken';
 
-// import { getTokenObject, RefreshToken } from '../utils/utils';
-
-// const tokens = getTokenObject()
-
-export const AuthContext = createContext();
+export const MainContext = createContext();
 
 const MyProvider = ({ children }) => {
 
@@ -25,8 +20,6 @@ const MyProvider = ({ children }) => {
   //level
 
   const [currentLevel, setCurrentLevel] = useState();
-
-  // const [tokenExpirationTime, setTokenExpirationTime] = useState();
 
   const [wallet, setWallet] = useState();
 
@@ -132,7 +125,24 @@ const MyProvider = ({ children }) => {
 
   const [ltcUsd, setLtcUsd] = useState();
 
-  const [ticketList, setTicketList] = useState();
+  const [ticketList, setTicketList] = useState([{
+    admin_reply: true,
+    body: "hi",
+    category: { created_at: null, updated_at: null, title: "test", id: 1 },
+    created_at: "2021-12-08T15:50:13.150098+03:30",
+    id: 56,
+    is_read: false,
+    media_id: 1,
+    priority: "high",
+    state: "open",
+    title: "test",
+    updated_at: null,
+    user: {
+      Group: null,
+      credentials: { created_at: null, updated_at: null, first_name: "Yasaman", last_name: "Soleymani" },
+      id: 6
+    }
+  }]);
 
   const [socketData, setSocketData] = useState({
 
@@ -178,33 +188,21 @@ const MyProvider = ({ children }) => {
 
   const [configData, setConfigData] = useState();
 
-  // const [isLoggedIn, setIsLoggedIn] = useState(Boolean(RefreshToken()))
-
   const isLoggedIn = true;
 
   const logout = () => {
-
-    // setToken(null);
-
-    // setTokenExpirationTime(null);
-
     localStorage.removeItem("userData");
-
   }
 
   return (
 
-    <AuthContext.Provider value={{
+    <MainContext.Provider value={{
 
       isLoggedIn,
 
       isMobile,
 
       setIsMobile,
-
-      // token,
-
-      // setToken,
 
       logout,
 
@@ -227,8 +225,6 @@ const MyProvider = ({ children }) => {
       wallet,
 
       setWallet,
-
-
 
       currentLevel,
 
@@ -472,7 +468,7 @@ const MyProvider = ({ children }) => {
 
       {children}
 
-    </AuthContext.Provider>
+    </MainContext.Provider>
 
   );
 

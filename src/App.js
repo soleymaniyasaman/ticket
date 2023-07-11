@@ -5,9 +5,7 @@ import RouterConfig from './navigation/router-config';
 function App() {
   return (
     <BrowserRouter>
-
       <RouterConfig />
-
     </BrowserRouter>
   );
 }
