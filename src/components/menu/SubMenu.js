@@ -13,11 +13,11 @@ const SidebarLink = styled(NavLink)`
   list-style: none;
   height: 60px;
   text-decoration: none;
-  .activeImg{
-    display: ${props => props.activeClick}!important;
+  .activeImg {
+    display: ${props => props.active}!important;
   }
-  .deactiveImg{
-    display: ${props => props.deactiveCLick}!important;
+  .deactiveImg {
+    display: ${props => props.deactivate}!important;
   }
   &:hover {
     background: #293C55;
@@ -25,21 +25,22 @@ const SidebarLink = styled(NavLink)`
     cursor: pointer;
     color: #FFF;
     text-decoration: none;
-    .activeImg{
+    .activeImg {
       display: block!important;
     }
-    .deactiveImg{
+    .deactiveImg {
       display: none!important;
     }
-  };
+  }
   &:active {
     background: #293C55!important;
     border-left: 4px solid #7E94FF;
     cursor: pointer;
     color: #FFF;
     text-decoration: none;
-    };
+  }
 `;
+
 
 
 const SidebarLabel = styled.span`
@@ -94,10 +95,9 @@ const SubMenu = ({ item, open, setOpen }) => {
 
       <SidebarLink
         id="sideBarLink"
-        activeClick={(window.location.pathname + window.location.search) === item.link ? "block" : "none"}
-        deactiveCLick={(window.location.pathname + window.location.search) === item.link ? "none" : "block"}
-        activeClassName={item.link ? "is-active" : null}
-        exact={false}
+        active={(window.location.pathname + window.location.search) === item.link ? "block" : "none"}
+        deactivate={(window.location.pathname + window.location.search) === item.link ? "none" : "block"}
+        active_class={item.link ? "is-active" : null}
         to={item.link ? item.link : window.location}
         onClick={item.subNav ? showSubnav : handleClick} >
         <img id="icon" alt='' src={item.icon} className="deactiveImg" />
@@ -117,7 +117,7 @@ const SubMenu = ({ item, open, setOpen }) => {
       {subnav &&
         item.subNav.map((item, index) => {
           return (
-            <DropdownLink activeClassName={(window.location.pathname + window.location.search) === item.link ? "is-active" : null} to={item.link} key={index} onClick={handleClick}>
+            <DropdownLink active_class={(window.location.pathname + window.location.search) === item.link ? "is-active" : null} to={item.link} key={index} onClick={handleClick}>
               <SidebarLabel id="title" style={{ opacity: 0.7 }}>{item.title}</SidebarLabel>
               <div>
                 {(window.location.pathname + window.location.search) === item.link ?

@@ -15,7 +15,6 @@ const MyProvider = ({ children }) => {
 
   const [otp, setOtp] = useState();
 
-  // const { token, setToken } = useToken();
 
   //level
 
@@ -183,8 +182,6 @@ const MyProvider = ({ children }) => {
   const [showGoogleAuth, setShowGoogleAuth] = useState(false);
 
   const [showApproveGoogleAuth, setShowApproveGoogleAuth] = useState(false);
-
-  const [tokenChain, setTokenChain] = useState("trx");
 
   const [configData, setConfigData] = useState();
 
@@ -455,10 +452,6 @@ const MyProvider = ({ children }) => {
       showApproveGoogleAuth,
 
       setShowApproveGoogleAuth,
-
-      tokenChain,
-
-      setTokenChain,
 
       configData,
 
