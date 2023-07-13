@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Routes, Route } from 'react-router-dom'
-import { ADDTICKETTING, TICKETING } from './CONSTANTS'
+import { ADDTICKETTING, TICKETING, ROOT } from './CONSTANTS'
 
 //pages
 import Ticketing from '../pages/ticketing'
@@ -16,6 +16,7 @@ const RouterConfig = () => {
         <div className="routLayout">
             <DashboardLayout>
                 <Routes>
+                    <Route path={ROOT} element={<Ticketing />} />
                     <Route path={TICKETING} element={<Ticketing />} />
                     <Route path={ADDTICKETTING} element={<AddTicket />} />
                 </Routes>

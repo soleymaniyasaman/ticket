@@ -1,4 +1,4 @@
-export const ROOT = '/ticket'
+export const ROOT = '/'
 
 export const MARKETS = '/markets'
 
