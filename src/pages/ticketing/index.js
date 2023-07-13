@@ -4,11 +4,11 @@ import { Form, Table } from 'react-bootstrap'
 
 import { Link } from 'react-router-dom';
 
-// import { ADDTICKETING } from '../../navigation/CONSTANS';
+import { ADDTICKETTING } from '../../navigation/CONSTANTS';
 
 import HistoryLayout from '../../components/hisory-layout';
 
-import { AuthContext } from '../../context/auth-context';
+import { MainContext } from '../../context/main-context';
 
 import add from '../../assets/vector/auth/Group1841.svg';
 
@@ -20,19 +20,9 @@ import profilePic from "../../assets/vector/profilepicture.svg";
 
 import dot from '../../assets/vector/dot.svg';
 
-// import { BASE_URL, IAM_APP } from '../../../utils/constants';
-
-// import ProfileInfo from '../../../services/profile';
-
 import PopUp from '../../components/popUp';
 
 import { timeToStr } from '../../components/utils/utils';
-
-// import IsMobile from '../../../components/is-mobile-responsive';
-
-import Down from '../../components/utils/down_collapse';
-
-// import service from '../../../services/service';
 
 import PaginationComponent from '../../components/pagination';
 
@@ -40,121 +30,24 @@ import cancel from '../../assets/vector/cancel-24px.svg'
 
 export default function Ticketing() {
 
-    const authContext = useContext(AuthContext);
-
-    // const [filterValue, setFilterValue] = useState()
+    const mainContext = useContext(MainContext);
 
     const [ticketId, setTicketId] = useState();
 
-    const [currentPage, setcurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
 
     const [dataLength, setDataLength] = useState();
 
     const [modalOpen, setModalOpen] = useState(false);
 
-    const [ticketItem, setTicketItem] = useState({
-        body: "hi",
-        created_at: "2021-12-08T15:50:13.150098+03:30",
-        id: 56,
-        is_read: true,
-        media_id: 1,
-        updated_at: null
-    })
+    const [ticketItem, setTicketItem] = useState()
 
-    const [ticketReplyItem, setTicketReplyItem] = useState([{
-        admin_reply: true,
-        body: "yep",
-        category: null,
-        created_at: "2021-12-07T08:37:57.167751+03:30",
-        id: 46,
-        is_read: true,
-        media_id: null,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: null,
-        user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
-            id: 6
-        }
-    }, {
-        admin_reply: true,
-        body: "nope",
-        category: null,
-        created_at: "2021-12-07T09:06:04.149402+03:30",
-        id: 47,
-        is_read: true,
-        media_id: 1,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: null,
-        user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
-            id: 6
-        }
-    }, {
-        admin_reply: true,
-        body: "string",
-        category: null,
-        created_at: "2021-12-07T10:23:18.400000+03:30",
-        id: 48,
-        is_read: true,
-        media_id: 0,
-        priority: "low",
-        state: "open",
-        title: null,
-        updated_at: "2021-12-07T10:23:42.440291+03:30",
-        user: {
-            Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'اشکان', last_name: null },
-            id: 8
-        }
-    }])
+    const [ticketReplyItem, setTicketReplyItem] = useState([])
 
     const [text, setText] = useState();
 
-    const [onCloseTicket, setOnCloseTicket] = useState(false);
 
-
-
-    //responsive: open drawer state
-
-    const [isOpen, setIsOpen] = useState(false)
-
-    let a = {
-        items: [
-            {
-                admin_reply: false,
-                body: "hi",
-                category: { created_at: null, updated_at: null, title: "test", id: 1 },
-                created_at: "2021-12-08T15:50:13.150098+03:30",
-                id: 56,
-                is_read: true,
-                media_id: 1,
-                priority: "high",
-                state: "open",
-                title: "ttteeeeesssstttt",
-                updated_at: null,
-                user: {
-                    Group: null,
-                    credentials: { created_at: null, updated_at: null, first_name: "یاسمن", last_name: "سلیمانی" },
-                    id: 6
-                }
-            }
-        ],
-        total: 1
-    }
-    let b = {
-        body: "hi",
-        created_at: "2021-12-08T15:50:13.150098+03:30",
-        id: 56,
-        is_read: true,
-        media_id: 1,
-        updated_at: null
-    }
+    //data 
 
     let c = [{
         admin_reply: true,
@@ -169,9 +62,7 @@ export default function Ticketing() {
         title: null,
         updated_at: null,
         user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
-            id: 6
+            author: 'admin'
         }
     }, {
         admin_reply: true,
@@ -186,9 +77,8 @@ export default function Ticketing() {
         title: null,
         updated_at: null,
         user: {
-            Group: null,
-            credentials: { created_at: null, updated_at: null, first_name: 'یاسمن', last_name: 'سلیمانی' },
-            id: 6
+            author: 'admin'
+
         }
     }, {
         admin_reply: true,
@@ -203,53 +93,19 @@ export default function Ticketing() {
         title: null,
         updated_at: "2021-12-07T10:23:42.440291+03:30",
         user: {
-            Group: null,
-            credentials: { created_at: '2021-10-26T10:57:48.429350+03:30', updated_at: null, first_name: 'اشکان', last_name: null },
-            id: 8
+            author: 'admin'
         }
     }]
-    // for mobile size toggle the table
+
     // get list of tickets
-
     const ticketList = () => {
-
-        // const ticketUrl = `${BASE_URL(IAM_APP)}/ticketing/?${currentPage ? `&page=${currentPage}` : ""}&size=10`
-
-        authContext.setTicketList(a.items)
-
-        setDataLength(a.total)
-        // service.get_api(ticketUrl)
-
-        //     .then(resp => {
-
-
-        //     })
-
+        setDataLength(mainContext.ticketList.length);
     }
 
     //close ticket
-
     const closeTicket = () => {
-
-        if (ticketId) {
-            setOnCloseTicket(true)
-
-            setModalOpen(false)
-
-            // const closeTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/close/`
-
-            // service.get_api(closeTicketUrl)
-
-            //     .then(resp => {
-
-
-            //     })
-
-            //     .finally(() => setModalOpen(false))
-
-        }
-
-    }
+        setModalOpen(false);
+    };
 
 
 
@@ -257,87 +113,96 @@ export default function Ticketing() {
 
         ticketList()
 
-    }, [currentPage, onCloseTicket]);
+    }, []);
 
 
-
-
-
-    const filter = <>
-
-    </>;
-
-
-
-    // get ticket's info who click on 
+    // get ticket's info which is clicked on 
 
     const ticketItems = () => {
 
-        // if (ticketId) {
-        setTicketItem(b)
+        // Find the selected ticket by its ID
+        const selectedTicket = mainContext.ticketList.find((ticket) => ticket.id === ticketId);
 
-        // const myTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/`
+        // If the selected ticket exists and its is_read property is false
+        if (selectedTicket && !selectedTicket.is_read) {
+            // Update the is_read property to true
+            const updatedTicket = { ...selectedTicket, is_read: true };
 
-        // service.get_api(myTicketUrl)
+            // Find the index of the selected ticket in the ticketList array
+            const selectedIndex = mainContext.ticketList.findIndex((ticket) => ticket.id === ticketId);
 
-        //     .then(resp => {
+            // Create a new array with the updated ticket at the selected index
+            const updatedTicketList = [
+                ...mainContext.ticketList.slice(0, selectedIndex),
+                updatedTicket,
+                ...mainContext.ticketList.slice(selectedIndex + 1),
+            ];
 
+            // Update the ticketList state with the updated array
+            mainContext.setTicketList(updatedTicketList);
+        }
+        setTicketItem(selectedTicket)
 
-        //     })
-
-        // }
-
-    }
-    console.log("ticket", authContext.ticketList);
-    //get replys of ticket who click on
-
-    const replyItems = () => {
-
-        if (ticketId) {
+        if (selectedTicket?.admin_reply) {
 
             setTicketReplyItem(c)
-            // const myTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/reply/`
 
-            // service.get_api(myTicketUrl)
-
-            //     .then(resp => {
-
-
-            //     })
+        } else if (!selectedTicket?.admin_reply) {
+            setTicketReplyItem()
 
         }
-
     }
 
 
 
     //post reply text
 
-    const ReplyTicket = () => {
+    const ReplyTicket = (text) => {
+        setTicketReplyItem((prev) => {
+            if (prev) {
+                return [...prev, {
+                    admin_reply: true,
+                    body: text,
+                    category: null,
+                    created_at: "2021-12-07T10:23:18.400000+03:30",
+                    id: 48,
+                    is_read: true,
+                    media_id: 0,
+                    priority: "low",
+                    state: "open",
+                    title: null,
+                    updated_at: new Date().toISOString(),
+                    user: {
+                        author: 'user'
+                    }
+                }]
 
-        setModalOpen(false)
-        // const replyTicketUrl = `${BASE_URL(IAM_APP)}/ticketing/${ticketId}/reply/`
-
-        // let payload = {
-
-        //     "body": text,
-
-        // }
-
-        // service.post_api(replyTicketUrl, payload = payload)
-
-        //     .then(resp => {
-
-
-        //     })
+            } else {
+                return [{
+                    admin_reply: true,
+                    body: text,
+                    category: null,
+                    created_at: "2021-12-07T10:23:18.400000+03:30",
+                    id: 48,
+                    is_read: true,
+                    media_id: 0,
+                    priority: "low",
+                    state: "open",
+                    title: null,
+                    updated_at: new Date().toISOString(),
+                    user: {
+                        author: 'user'
+                    }
+                }]
+            }
+        })
+        setText()
 
     }
 
     useEffect(() => {
 
         ticketItems()
-
-        replyItems()
 
     }, [ticketId, modalOpen]);
 
@@ -351,15 +216,15 @@ export default function Ticketing() {
 
         {ticketItem ?
 
-            <div dir="rtl" className="align-items-start d-flex p-3">
+            <div dir="rtl" className="align-items-end d-flex p-3">
 
                 <div>
 
                     <div className="align-items-start d-flex">
 
-                        <img alt="" src={profilePic} className="pl-2" />
+                        <img alt="" src={profilePic} className="ps-2" />
 
-                        <p className="m-0">{'نامعلوم'}</p>
+                        <p className="m-0">{'none register'}</p>
 
                     </div>
 
@@ -388,54 +253,22 @@ export default function Ticketing() {
                 return (
 
                     <>
-
-                        {/* {item.user.id === authContext.profileInfo.id ? */}
-
-                        <div dir="rtl" className="align-items-start d-flex p-3">
-
-                            <div>
-
-                                <div className="align-items-start d-flex">
-
-                                    <img alt="" src={profilePic} className="pl-2" />
-
-                                    <p className="m-0">{'نامعلوم'}</p>
-
-                                </div>
-
-                                <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
-
-                                <div className="input-group-text rounded-3">
-
-                                    <p className="m-1">
-
-                                        {item.body}
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        {/* :
-
-                            <div dir="ltr" className="align-items-start d-flex p-3">
+                        {item.user.author === 'admin' ?
+                            <div key={index} className="align-items-end d-flex p-3">
 
                                 <div>
 
-                                    <div dir="rtl" className="align-items-start d-flex">
+                                    <div className="align-items-start d-flex">
 
-                                        <img alt="" src={profilePic} className="pl-2" />
+                                        <img alt="" src={profilePic} className="ps-2" />
 
-                                        <p className="m-0">ادمین</p>
+                                        <p className="m-0">Admin</p>
 
                                     </div>
 
-                                    <p className="m-0 mt-n1 text-start">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
+                                    <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
 
-                                    <div className="input-group-text rounded-3 text-white" style={{ backgroundColor: '#181C1F' }}>
+                                    <div className="input-group-text rounded-3">
 
                                         <p className="m-1">
 
@@ -447,7 +280,36 @@ export default function Ticketing() {
 
                                 </div>
 
-                            </div>} */}
+                            </div>
+                            :
+                            <div dir="rtl" className="align-items-start d-flex p-3">
+
+                                <div>
+
+                                    <div className="align-items-start d-flex">
+
+                                        <img alt="" src={profilePic} className="pl-2" />
+
+                                        <p className="m-0">None register</p>
+
+                                    </div>
+
+                                    <p className="m-0 mt-n1">{timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}</p>
+
+                                    <div className="input-group-text rounded-3">
+
+                                        <p className="m-1">
+
+                                            {item.body}
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        }
 
                     </>
 
@@ -467,11 +329,11 @@ export default function Ticketing() {
 
             <Form className="w-100">
 
-                <Form.Group dir="rtl" className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
+                <Form.Group className="d-flex mb-3 " controlId="exampleForm.ControlTextarea1">
 
-                    <Form.Label className="form-label ml-2" style={{ whiteSpace: 'nowrap' }}>ارسال تیکت</Form.Label>
+                    <Form.Label className="form-label me-2" style={{ whiteSpace: 'nowrap' }}>Send Message</Form.Label>
 
-                    <Form.Text as="textarea" rows={3} className="input-group-text text-right rounded-2 w-100" onChange={e => setText(e.target.value)} />
+                    <Form.Text as="textarea" rows={3} value={text} className=" text-right rounded-2 w-100" onChange={(e) => setText(e.target.value)} />
 
                 </Form.Group>
 
@@ -485,17 +347,14 @@ export default function Ticketing() {
 
     const body = <>
 
-        {/* <ProfileInfo /> */}
 
-        {/* <IsMobile /> */}
+        <div className="d-flex justify-content-end ms-0 mb-4">
 
-        <div className="d-flex justify-content-end ml-0 mb-4">
+            <Link to={ADDTICKETTING}>
 
-            {/* <Link to={ADDTICKETING}> */}
+                <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ms-0">Add Ticket<img alt="" src={add} className="ms-2 h-75 me-2" /></button>
 
-            <button id="btn-add-cart" className="bg-light btn rounded-pill text-success py-1 ml-0">ثبت تیکت جدید<img alt="" src={add} className="ml-2 h-75 mr-2" /></button>
-
-            {/* </Link> */}
+            </Link>
 
         </div>
 
@@ -509,7 +368,7 @@ export default function Ticketing() {
 
                 size="lg"
 
-                popUpHead={"مشاهده پیام"}
+                popUpHead={"See Message"}
 
                 popUpBody={popUpBody}
 
@@ -517,7 +376,7 @@ export default function Ticketing() {
 
                 onClose={closeTicket}
 
-                onCloseText={'آیا از بستن تیکت مطمئن هستید؟ بعد از بسته شدن تیکت امکان پاسخ مجدد وجود ندارد'}
+                onCloseText={'Are you sure you want to close the ticket? It is not possible to answer again after closing the ticket'}
 
                 onAccept={() => {
 
@@ -531,147 +390,20 @@ export default function Ticketing() {
 
                 }
 
-                onAcceptText={'ارسال تیکت'}
+                onAcceptText={'Send Ticket'}
+                onConfirmClose={() => {
+                    // Remove the closed ticket from the ticket list
+                    const updatedTicketList = mainContext.ticketList.filter((ticket) => ticket.id !== ticketId);
+                    mainContext.setTicketList(updatedTicketList);
+                }}
 
             /> : null
 
         }
 
-        {authContext.isMobile ?
+        {
 
-            <>
-
-                <PaginationComponent total={dataLength} data={authContext.ticketList ? authContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setcurrentPage={setcurrentPage}>
-
-                    {authContext.ticketList?.length ?
-
-                        authContext.ticketList.map((item, index) => {
-
-                            return <Table responsive="sm" >
-
-                                <tbody>
-
-                                    <tr>
-
-                                        <td>عنوان تیکت </td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-
-                                            {!item.is_read ? <img alt="" src={dot} /> : null}
-
-                                            {item.title}
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr>
-
-                                        <td>زمان ارسال</td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-
-                                            {timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr >
-
-                                        <td>وضعیت</td>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
-                                            {item.state === "open" ?
-
-                                                item.admin_reply === "true" ?
-
-                                                    <>
-
-                                                        <img alt="" src={check} />
-
-                                                        پاسخ داده شده
-
-                                                    </> :
-
-                                                    <>
-
-                                                        <img alt="" src={notCheck} />
-
-                                                        در انتظار پاسخ
-
-                                                    </>
-
-                                                :
-
-                                                item.state === "close" ?
-                                                    <>
-
-                                                        <img alt="" src={cancel} />
-
-                                                        بسته شده
-
-                                                    </>
-                                                    :
-                                                    null
-
-                                            }
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr class={`collapse ticket-collapse${index}`} id={`multiCollapseTicket${index}`}>
-
-                                        <td colSpan="2" >
-
-                                            <Link className="btn btn-purple w-50" onClick={() => {
-
-                                                setTicketId(item.id);
-
-                                                setModalOpen(true)
-
-                                            }}>جزئیات</Link>
-
-                                        </td>
-
-                                    </tr>
-
-                                    <tr
-
-                                        data-toggle="collapse"
-
-                                        data-target={`.ticket-collapse${index}`}
-
-                                        aria-controls={`multiCollapseTicket${index}`}
-
-                                    >
-
-                                        <td colSpan={2}>
-
-                                            <button className="btn d-flex justify-content-center text-white w-100" onClick={() => setIsOpen(!isOpen)}>
-
-                                                بیشتر <Down isOpen={isOpen} />
-
-                                            </button>
-
-                                        </td>
-
-                                    </tr>
-
-                                </tbody>
-
-                            </Table>
-
-                        }) : null}
-
-                </PaginationComponent>
-
-            </>
-
-            :
-
-            <PaginationComponent total={dataLength} data={authContext.ticketList ? authContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setcurrentPage={setcurrentPage}>
+            <PaginationComponent total={dataLength} data={mainContext.ticketList ? mainContext.ticketList : null} itemsPerPage={10} currentPage={currentPage} setCurrentPage={setCurrentPage}>
 
                 <Table responsive="sm" className="tableTicket" >
 
@@ -679,13 +411,13 @@ export default function Ticketing() {
 
                         <tr>
 
-                            <th>عنوان تیکت </th>
+                            <th>Ticket Title</th>
 
-                            <th>زمان ارسال  </th>
+                            <th>Send Time </th>
 
-                            <th>وضعیت</th>
+                            <th>Status</th>
 
-                            <th>جزییات</th>
+                            <th>Detail</th>
 
                         </tr>
 
@@ -693,15 +425,14 @@ export default function Ticketing() {
 
                     <tbody>
 
-                        {authContext.ticketList?.length ?
+                        {mainContext.ticketList?.length ?
 
-                            authContext.ticketList.map((item, index) => {
+                            mainContext.ticketList.map((item, index) => {
 
                                 return (
+                                    <tr key={index}>
 
-                                    <tr>
-
-                                        <td className={item.is_read ? 'text-muted' : null}>
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
 
                                             {!item.is_read ? <img alt="" src={dot} /> : null}
 
@@ -709,41 +440,41 @@ export default function Ticketing() {
 
                                         </td>
 
-                                        <td className={item.is_read ? 'text-muted' : null}>
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
 
-                                            {timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD")}
+                                            {item.created_at ? timeToStr(item.created_at, "HH:mm  -   jYYYY/jMM/jDD") : ""}
 
                                         </td>
 
-                                        <td className={item.is_read ? 'text-muted' : null}>
-                                            {item.state === "open" ?
+                                        <td className={item.is_read ? 'text-muted' : 'text-light'}>
+                                            {item.state && item.state === "open" ?
 
                                                 item.admin_reply === true ?
 
                                                     <>
 
-                                                        <img alt="" src={check} className='ml-1' />
+                                                        <img alt="" src={check} className='ms-1' />
 
-                                                        پاسخ داده شده
+                                                        Answered
 
                                                     </> :
 
                                                     <>
 
-                                                        <img alt="" src={notCheck} className='ml-1' />
+                                                        <img alt="" src={notCheck} className='ms-1' />
 
-                                                        در حال بررسی
+                                                        Pending
 
                                                     </>
 
                                                 :
 
-                                                item.state === "close" ?
+                                                item.state && item.state === "close" ?
                                                     <>
 
-                                                        <img alt="" src={cancel} className='ml-1' />
+                                                        <img alt="" src={cancel} className='ms-1' />
 
-                                                        بسته شده
+                                                        Closed
 
                                                     </>
                                                     :
@@ -755,13 +486,16 @@ export default function Ticketing() {
 
                                         <td>
 
-                                            <Link className="btn btn-purple w-50" onClick={() => {
-
-                                                setTicketId(item.id);
-
-                                                setModalOpen(true)
-
-                                            }}>جزئیات</Link>
+                                            <Link
+                                                className="btn btn-purple w-50"
+                                                onClick={() => {
+                                                    item.id && setTicketId(item.id);
+                                                    console.log("id", ticketId);
+                                                    setModalOpen(true)
+                                                }}
+                                                to={'#'}>
+                                                Detail
+                                            </Link>
 
                                         </td>
 
@@ -773,7 +507,7 @@ export default function Ticketing() {
 
                                 <td colSpan={4}>
 
-                                    تیکتی ثبت نشده است
+                                    There is not any Ticket
 
                                 </td>
 
@@ -797,11 +531,9 @@ export default function Ticketing() {
 
         <HistoryLayout
 
-            title="تیکت ها"
+            title="Tickets"
 
-            panelTitle="تیکت ها"
-
-            // filter={filter}
+            panelTitle="Tickets"
 
             body={body}
 

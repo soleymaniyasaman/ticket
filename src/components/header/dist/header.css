@@ -1,0 +1,97 @@
+#dashboard-header {
+  /* direction: rtl; */
+  /* text-align: right; */
+  background-color: #172B46;
+  max-width: 1674px;
+  position: fixed;
+  z-index: 2000;
+  padding: 0;
+}
+#dashboard-header .logo {
+  margin: 1vw 10vw 0 0 !important;
+  color: #7E94FF !important;
+}
+#dashboard-header .container_burger {
+  margin-inline: auto;
+}
+#dashboard-header .navbar-nav {
+  width: 100%;
+  display: flex;
+}
+#dashboard-header .navbar-nav a {
+  font-size: 12px IRANSans;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+#dashboard-header .navbar-nav a img {
+  margin-left: 5px;
+  color: #7E94FF;
+  width: 1rem;
+}
+#dashboard-header .navbar-nav a:first-child {
+  margin-left: auto;
+}
+#dashboard-header .navbar-nav a .dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+#dashboard-header .navbar-nav a .dropdown .dropdown-menu {
+  background-color: #fff;
+  text-align: start;
+}
+#dashboard-header .navbar-nav a .dropdown .dropdown-menu a {
+  color: #0A1930;
+}
+#dashboard-header .navbar-nav a .dropdown .dropdown-menu .dropdown-item {
+  color: #0A1930;
+  padding: 0.5rem;
+  font-size: 12px;
+}
+#dashboard-header .navbar-nav a .dropdown .dropdown-menu .dropdown-item:hover {
+  background-color: #C5CAE3;
+}
+#dashboard-header .navbar-nav a .dropdown .dropdown-menu .dropdown-item .dropdown-item-text {
+  padding: 0.25rem 0.5rem;
+}
+#dashboard-header .navbar-nav a .dropdown #nav-dropdown .dropdown-item {
+  color: #0A1930;
+  padding: 0.5rem;
+}
+#dashboard-header .navbar-nav a .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+#dashboard-header .navbar-nav a .dropdown-toggle::after {
+  margin-right: 1rem;
+  background-image: url("../../../assets/vector/drawer/deactive/chevron-black_24dp.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0rem 100%;
+  width: 24px;
+  height: 24px;
+  border: none;
+  margin-top: 2px;
+}
+#dashboard-header .navbar-nav .btn:focus {
+  box-shadow: none !important;
+}
+
+@media screen and (min-width: 1400px) {
+  #dashboard-header .navbar-nav a {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 780px) {
+  #dashboard-header .navbar-nav a {
+    font-size: xx-small;
+    white-space: nowrap;
+    margin-inline: auto;
+  }
+}
+@media screen and (max-width: 567px) {
+  #dashboard-header .navbar-nav a img {
+    margin-left: 0;
+  }
+}

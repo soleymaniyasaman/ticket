@@ -37,7 +37,11 @@ table {
 table thead {
   background-color: #0A1930;
   color: #fff;
+<<<<<<< HEAD
   font-size: 13px IRANSans;
+=======
+  font-size: 13px;
+>>>>>>> home-section
 }
 table tr {
   background-color: #0A1930;

@@ -1,58 +1,42 @@
-@import '../../../styles/colors';
+@import '../../components/styles/colors';
 
 #btn-add-cart {
-    color           : $green;
-    background-color: white !important;
-    direction       : initial;
-    border          : 2px solid;
-    padding         : .3rem !important;
-    margin-left     : 1rem;
-    svg {
-        margin-right: 1rem;
-        transform   : translate(3px, 3px) scale(2);
-    }
+  color: $green;
+  background-color: white !important;
+  direction: initial;
+  border: 2px solid;
+  padding: .3rem !important;
+  margin-left: 1rem;
+
+  svg {
+    margin-right: 1rem;
+    transform: translate(3px, 3px) scale(2);
+  }
 }
 
-#addTicket .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    border-radius: 19px!important;
-    border: none!important;
-    width: 100%!important;
-    height: 38px!important;
-    align-items: center!important;
+.ant-select-arrow {
+  left: 11px !important;
+  right: auto !important;
+}
 
-  }
-  .ant-select-arrow {
-      left: 11px!important;
-      right: auto!important;
-    }
-  .modal-content{
-    background-color:$gray;
-    color: $white;
-    font: normal normal normal 16px/27px IRANSans;
-    letter-spacing: 0px;
-    text-align: left;
+.modal-content {
+  background-color: $gray;
+  color: $white;
+  font: normal normal normal 16px/27px;
+  letter-spacing: 0px;
+  text-align: left;
 
 
-  }
-  .modal-header{
-    border: none;
-  }
-  .modal-body{
-    background-color:$gray;
-    font-family: 'IranSans'!important;
+}
 
-  }
-  .modal-footer{
-    border: none;
-  }
-    @media screen and (max-width: 1400px){
-        #addTicket .ant-select-single .ant-select-selector .ant-select-selection-placeholder {
-            font-size: 1vw!important;
-            font-weight: 400!important;
-        }
-        #addTicket input::placeholder{
-            font-size: 1vw!important;
-          }
+.modal-header {
+  border: none;
+}
 
-      
-  }
+.modal-body {
+  background-color: $gray;
+}
+
+.modal-footer {
+  border: none;
+}

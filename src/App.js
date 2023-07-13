@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Ticketing from './pages/ticketing';
+import { BrowserRouter } from 'react-router-dom';
+import RouterConfig from './navigation/router-config';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Ticketing />
-      </header>
-    </div>
+    <BrowserRouter>
+      <RouterConfig />
+    </BrowserRouter>
   );
 }
 

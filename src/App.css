@@ -1,17 +1,84 @@
-.App {
-  text-align: center;
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+
+.routLayout {
+  background-color: #181C1F;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.breadcrumb {
+  background-color: #181C1F;
+  margin-bottom: 0;
+  padding-right: 0;
+  padding-top: 0;
+}
+.breadcrumb .breadcrumb-item {
+  font-size: 14px;
+}
+.breadcrumb .breadcrumb-item::before {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+.breadcrumb .breadcrumb-item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table {
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
 }
+table thead {
+  background-color: #181C1F;
+  color: #fff;
+  font-size: 13px;
+}
+table tr {
+  background-color: #181C1F;
+  z-index: 10;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+table tr .green-shadow {
+  position: absolute;
+  z-index: -1;
+  background-color: #172828;
+  width: 60%;
+  height: 100%;
+  right: 0px;
+}
+table tr .red-shadow {
+  position: absolute;
+  z-index: -1;
+  background-color: #231C21;
+  width: 60%;
+  height: 100%;
+  right: 0px;
+}
+
+.text-success {
+  color: #10D078 !important;
+}
+
+.text-danger {
+  color: #F83A3A !important;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #BEBEBE !important;
+  opacity: 1;
+}
+
+div {
+  padding: 0;
+  margin: 0;
+}
+
+.container-fluid {
+  margin: auto;
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +91,10 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error {
+  color: #dc3545;
+  display: flex;
+  margin-right: 17px;
+  margin-bottom: 11px;
+  margin-top: 2px;
 }

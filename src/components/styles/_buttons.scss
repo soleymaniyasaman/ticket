@@ -4,50 +4,61 @@
     background-color: $purple !important;
     border-color: $purple;
     color: #fff !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
     height: 2.5em;
 }
-.btn-autline{
-    background-color: transparent !important ;
+
+.btn-cancel {
+    width: 6%;
+    border: 1px solid $red;
+    color: $red;
+    margin-right: 1rem;
+    border-radius: 1.1875rem !important;
+    height: 2.5em;
+}
+
+.btn-autline {
+    background-color: transparent !important;
     border-color: $secondary !important;
     color: $purple !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
     height: 2.5em;
     font-size: 13px !important;
 }
+
 .btn-success {
     background-color: $green !important;
     border-color: $green;
     color: $white !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important; 
-    height: 2.5em; 
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
+    height: 2.5em;
 }
 
 .btn-danger {
     background-color: $red !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
     height: 2.5em;
 }
 
 .btn-secondary {
     background-color: $secondary !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
     height: 2.5em;
 }
 
 
 .btn-danger2 {
     background-color: $black !important;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
-    border-color    : $red !important;
-    color           : $red !important;
-    font-size       : 12px !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
+    border-color: $red !important;
+    color: $red !important;
+    font-size: 12px !important;
     height: 2.5em;
 
     &:focus {
@@ -59,12 +70,12 @@
 
 @mixin btnDark($color) {
     background-color: $black !important;
-    color           : $color !important;
+    color: $color !important;
     border: 1px solid $color;
-    border-radius   : 1.1875rem !important;
-    padding         : 0.2rem 1.1rem !important;
+    border-radius: 1.1875rem !important;
+    padding: 0.2rem 1.1rem !important;
     font-size: 11px;
-    
+
 }
 
 .btn-dark-success {

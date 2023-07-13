@@ -1,0 +1,59 @@
+@import "../styles/colors";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+#panel {
+    background-color: $gray;
+    color: $white;
+    direction: ltr;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 10px;
+    max-height: 54.5rem;
+    font-family: 'Oswald',
+        sans-serif;
+
+    #panel__header {
+        padding: 1rem 0 0 1rem;
+        text-align: left;
+
+        span {
+            margin-bottom: 0;
+            font-size: 14px;
+            color: $white;
+            text-align: center;
+
+            &:first-child {
+                font-size: 23px;
+            }
+
+            &:nth-child(2) {
+                top: -6px !important;
+                position: relative;
+                left: 6px;
+            }
+        }
+
+        svg {
+            color: $green;
+        }
+    }
+
+    #panel__body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 1rem 0;
+        overflow-y: auto;
+        border: 1px solid $gray;
+        border-radius: 10px;
+        height: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #panel {
+        max-height: unset;
+    }
+}
