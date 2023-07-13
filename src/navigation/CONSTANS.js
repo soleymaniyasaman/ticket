@@ -1,4 +1,4 @@
-export const ROOT = '/'
+export const ROOT = '/ticket'
 
 export const MARKETS = '/markets'
 
@@ -72,7 +72,7 @@ export const SCORE = '/panel/score'
 
 export const BRAGAINSHISTORY = '/panel/bargainshistory'
 
-export const DEPOSITSHISTORY  = '/panel/depositshistory'
+export const DEPOSITSHISTORY = '/panel/depositshistory'
 
 export const ORDERSHISTORY = '/panel/ordershistory'
 
