@@ -4,6 +4,7 @@ import './header.scss'
 import email from '../../assets/vector/email.svg'
 import bell from '../../assets/vector/bell.svg'
 import Home from "../../assets/vector/home-24px.svg"
+import { TICKETING } from '../../navigation/CONSTANTS';
 
 export default function DashboardHeader() {
 
@@ -18,19 +19,19 @@ export default function DashboardHeader() {
             <Navbar collapseOnSelect expand variant="dark">
                 <Nav >
                     <Nav.Item>
-                        <Nav.Link href={'/ticket'} >
+                        <Nav.Link href={TICKETING} >
                             <img alt="" src={Home} />
                             Home
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href={'/ticket'}>
+                        <Nav.Link href={TICKETING}>
                             <img alt="" src={email} />
                             Tickets
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href={'/ticket'}>
+                        <Nav.Link href={TICKETING}>
                             <img alt="" src={bell} />
                             Messages
                         </Nav.Link>
