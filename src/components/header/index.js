@@ -18,7 +18,7 @@ export default function DashboardHeader() {
             <Navbar collapseOnSelect expand variant="dark">
                 <Nav >
                     <Nav.Item>
-                        <Nav.Link href={'/'} >
+                        <Nav.Link href={'/ticket'} >
                             <img alt="" src={Home} />
                             Home
                         </Nav.Link>
@@ -30,7 +30,7 @@ export default function DashboardHeader() {
                         </Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link href={'/'}>
+                        <Nav.Link href={'/ticket'}>
                             <img alt="" src={bell} />
                             Messages
                         </Nav.Link>
